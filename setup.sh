@@ -42,7 +42,7 @@ else
             then
                 apt install git -y
             fi
-            if [[ "$gitinstall" -eq 1 ]]
+            if [[ "$pipinstall" -eq 1 ]]
             then
                 apt install python3-pip -y
             fi
