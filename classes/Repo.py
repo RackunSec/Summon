@@ -71,7 +71,7 @@ class Repo():
         print(f" {self.style.subpipe}{self.style.PPUR}Author: {self.style.CMNT}{repo_json['apps_list'][category][app]['author']}{self.style.RST}")
         print(f" {self.style.subpipe}{self.style.PPUR}Comment: {self.style.CMNT}{comment}{self.style.RST}")
         print(f" {self.style.subpipe}{self.style.PPUR}Install Path: {self.style.CMNT}{repo_json['apps_list'][category][app]['install_path']}{self.style.RST}")
-        print(f" {self.style.subpipebot}{self.style.PPUR}How to Install: {self.style.CMNT}{self.style.PINK}python3 summon.py install-app {app}{self.style.RST}\n")
+        print(f" {self.style.subpipebot}{self.style.PPUR}How to Install: {self.style.CMNT}{self.style.PINK}python3 summon.py install {app}{self.style.RST}\n")
 
         return
 
