@@ -80,8 +80,8 @@ def main(): ## This is mainly for handling input and sending tasks off to be don
         elif sys.argv[1]=="app-info" and len(sys.argv)>2: ## Get information on a single application
             app_info(sys.argv[2])
         ## Secret functions:
-        elif sys.argv[1]=="terminal": ## open Summon in Tilix:
-            pass
+        elif sys.argv[1]=="version": ## Show version
+            demon_version()
         elif sys.argv[1]=="update-check": ## check for updates (Repo())
             repo=Repo()
             repo.update_check()
@@ -105,6 +105,12 @@ def get_uid(function):
         print(f"{style.fail} {function} must be ran as root.")
         sys.exit(1337)
 
+
+## Show Demon repo Version
+def demon_version():
+    repo=Repo()
+    repo.update_check()
+    return
 
 ## Install Red Team apps listed in redteam.json using files within ./install_modules/
 def redteam_apps(all,force):

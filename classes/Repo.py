@@ -15,7 +15,7 @@ import subprocess ## Run command and save output to variable.
 class Repo():
     def __init__(self) -> None:
         self.repo_file = "/etc/demon/apps_repo/demon_apps.json"
-        self.current_ver_uri="https://demonlinux.com/download/packages/4.X/version.txt"
+        self.current_ver_uri="https://raw.githubusercontent.com/RackunSec/Summon/main/version.txt"
         self.style = Style()
 
     ## Show all applications
