@@ -16,10 +16,11 @@ import subprocess
 import sys ## For exit() and Arguments
 import os
 ## Summon Classes:
-from classes.Style import Style
-from classes.Apps import Apps
-from classes.Shell import Shell
-from classes.Repo import Repo
+from classes.Style import Style ## Stylish
+from classes.Apps import Apps ## Application stuff
+from classes.Shell import Shell ## run_cmd()
+from classes.Files import Files ## File stuff
+from classes.Repo import Repo ## Local and remote repo stuff
 import importlib
 
 ## The main() function of the application:
@@ -38,6 +39,10 @@ def main(): ## This is mainly for handling input and sending tasks off to be don
         else:
             print(f"{style.RED} ✖{style.RST}")
             sys.exit(1337)
+        ## Check if /redteam exists:
+        files=Files()
+        files.build_redteam() ## if not there, build it.
+        
         ## Capture Force from arguments if there:
         if "--force" in sys.argv:
             force=True

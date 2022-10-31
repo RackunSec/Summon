@@ -162,12 +162,6 @@ class Application():
         self.style.prnt_install("Fonts","misc")
         self.shell.run_cmd(["fc-cache","-f"])
  
-        ## Install Summon:
-        self.shell.run_cmd(["cp","files/images/icons/summon.png","/usr/share/demon/images/icons/"])
-        self.shell.run_cmd(["cp","files/images/icons/summon-update.png","/usr/share/demon/images/icons/"])
-        #self.shell.run_cmd(["cp","update_summon.py","/usr/local/sbin/"])
-        #os.chmod("/usr/local/sbin/update_summon.py",stat.S_IEXEC)
-
         print(f"\n{self.style.info} All done! Simply reboot to take effect!\n\n")
 
         return
