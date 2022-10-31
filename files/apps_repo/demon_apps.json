@@ -1,5 +1,5 @@
 {
-  "repo_version": "4.0",
+  "repo_version": "4.1",
   "apps_list": {
     "wifi": {
       "aircrack-ng": {
@@ -854,6 +854,20 @@
         "about": "Payload creation tool used for circumventing EDR security controls to execute shellcode in a stealthy manner",
         "install_path": "",
         "author": "Optiv",
+        "comment": ""
+      }
+    },
+    "cloud":{
+      "cloudfox":{
+        "name": "CloudFox",
+        "add": "False",
+        "demon_version": "4.1",
+        "installed": "False",
+        "category": "cloud",
+        "project_uri": "https://github.com/BishopFox/cloudfox",
+        "about": "Gain situational awareness in unfamiliar cloud environments",
+        "install_path": "",
+        "author": "BishopFox",
         "comment": ""
       }
     }

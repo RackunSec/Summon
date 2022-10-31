@@ -38,6 +38,8 @@ class Repo():
                 for app in repo_json['apps_list'][category]:
                     app_count=app_count+1
                     self.display_app_info(repo_json,category,app)
+                    if repo_json['apps_list'][category][app]['installed']=="True":
+                        install_count=install_count+1
             print(f"{app_count} applications total, {install_count} installed")
             
         return
