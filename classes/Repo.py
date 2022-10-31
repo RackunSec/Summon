@@ -82,16 +82,35 @@ class Repo():
         shell=Shell()
         self.style.prnt_install("Upgrade","Base")
         if apps.git_pull("/opt/demon/"):
-            shell.run_cmd(["rm","-rf","/etc/demon/apps_repo/*"]) ## Remove the old repository
-            shell.run_cmd(["cp","/opt/demon/files/apps_repo/demon_apps.json","/etc/demon/apps_repo/"])
-            with open(self.repo_file, "r") as config:
+            installed_apps = []
+            with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
                 repo_json = json.load(config)
                 local_version = repo_json['repo_version']
-                print(f"{self.style.sing} {self.style.CMNT}Summon updated successfully to {self.style.GREEN}{local_version}{self.style.RST}.")
-                return
+                for category in repo_json['apps_list']:
+                    for repo_app in repo_json['apps_list'][category]:
+                        if repo_json['apps_list'][category][repo_app]['installed']=="True":
+                            installed_apps.append(repo_app)
+            shell.run_cmd(["rm","-rf","/etc/demon/apps_repo/*"]) ## Remove the old repository
+            shell.run_cmd(["cp","/opt/demon/files/apps_repo/demon_apps.json","/etc/demon/apps_repo/"])
+            self.reset_new_repo(installed_apps) ## Write the new repo install status
+            print(f"{self.style.sing} {self.style.CMNT}Summon updated successfully to {self.style.GREEN}{local_version}{self.style.RST}.")
+            return
+
         else:
             print(f"{self.style.fail} Could not update the Repository.")
         return
+
+    ## Reset New Repo:
+    def reset_new_repo(self,apps):
+        with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
+            repo_json = json.load(config)
+            local_version = repo_json['repo_version']
+            for category in repo_json['apps_list']:
+                for repo_app in repo_json['apps_list'][category]:
+                    if repo_app in apps: ## It was previously installed, set it to "True":
+                        repo_json['apps_list'][category][repo_app]['installed']="True"
+        with open(self.repo_file,"w") as update_json: ## The "indent=(n)" option here keeps the file linted/formatted/pretty nicely.
+            update_json.write(json.dumps(repo_json,indent=2)) ## write the new values.
 
     ## Check for updates:
     def update_check(self):
