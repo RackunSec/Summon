@@ -4,6 +4,8 @@
 Summon is a tool that will turn a stock Debian installation into a [Demon Linux distribution](https://demonlinux.com). In the olde days, I was distributing ISO files that were ~3GB in size. To avoid bandwidth issues and make the process of updates a lot easier for me and other users of Demon Linux, I have created an installer script - Summon.
 
 ## Installation
+[![Watch the installation demo video](https://img.youtube.com/vi/CspmyGp7LbA/default.jpg)](https://youtu.be/CspmyGp7LbA)
+
 To install Demon Linux ontop of a fresh installation of Debian follow these steps:
  1. Download and install a Debian amd64 using [the Netinstall ISO](https://www.demonlinux.com/download/iso/debian-11.5.0-amd64-netinst.iso).
     1. During installation, create a non-root user and only install the base system (Summon will handle the UI stuff)
@@ -40,4 +42,3 @@ To install Demon Linux ontop of a fresh installation of Debian follow these step
  ```bash
  sudo python3 summon.py upgrade
  ```
-
