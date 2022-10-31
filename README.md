@@ -5,7 +5,7 @@ Summon is a tool that will turn a stock Debian installation into a Demon Linux d
 
 ## Installation
 To install Demon Linux ontop of a fresh installation of Debian follow these steps:
- 1. Download and install Debian amd64 using the Netinstall ISO.
+ 1. Download and install a Debian amd64 using [the Netinstall ISO](https://www.demonlinux.com/download/iso/debian-11.5.0-amd64-netinst.iso).
     1. During installation, create a non-root user and only install the base system (Summon will handle the UI stuff)
  2. Install git: `apt install git -y` and clone this repository: `cd /opt && git clone https://github.com/RackunSec/Summon.git`
  3. Run the setup script with: `chmod +x setup.sh && ./setup.sh`
