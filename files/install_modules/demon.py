@@ -168,6 +168,8 @@ class Application():
         #self.shell.run_cmd(["cp","update_summon.py","/usr/local/sbin/"])
         #os.chmod("/usr/local/sbin/update_summon.py",stat.S_IEXEC)
 
+        print(f"\n{self.style.info} All done! Simply reboot to take effect!\n\n")
+
         return
 
     def check_install(self):
