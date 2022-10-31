@@ -1,6 +1,5 @@
 # Summon Demon Linux
-
-![Summon Icon](files/images/icons/summon.png | width=100)
+<img src="https://github.com/RackunSec/Summon/raw/main/files/images/icons/summon.png" width="300" />
 
 Summon is a tool that will turn a stock Debian installation into a Demon Linux distribution. In the olde days, I was distributing ISO files that were ~3GB in size. To avoid bandwidth issues and make the process of updates a lot easier for me and other users of Demon Linux. I have created an installer script - Summon.
 
