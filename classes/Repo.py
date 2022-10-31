@@ -36,10 +36,10 @@ class Repo():
                         continue ## we don't need this one
                 print(f"🔥 {self.style.ORAN}{self.style.BOLD}{category}{self.style.RST} 🔥")
                 for app in repo_json['apps_list'][category]:
-                    app_count=app_count+1
-                    self.display_app_info(repo_json,category,app)
                     if repo_json['apps_list'][category][app]['installed']=="True":
                         install_count=install_count+1
+                    app_count=app_count+1
+                    self.display_app_info(repo_json,category,app)
             print(f"{app_count} applications total, {install_count} installed")
             
         return
@@ -95,6 +95,9 @@ class Repo():
             shell.run_cmd(["rm","-rf","/etc/demon/apps_repo/*"]) ## Remove the old repository
             shell.run_cmd(["cp","/opt/demon/files/apps_repo/demon_apps.json","/etc/demon/apps_repo/"])
             self.reset_new_repo(installed_apps) ## Write the new repo install status
+            with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
+                repo_json = json.load(config)
+                local_version = repo_json['repo_version']
             print(f"{self.style.sing} {self.style.CMNT}Summon updated successfully to {self.style.GREEN}{local_version}{self.style.RST}.")
             return
 
