@@ -1,0 +1,28 @@
+{ 
+    "repo_version": "Summon Version number, e.g.: '4.X' no quotes",
+    "apps_list": {
+        "category_no_spaces":{
+            "tool_short_name_no_spaces": {
+                "name": "Tool Full Name",
+                "add": "False",
+                "demon_version": "4.0",
+                "installed": "False",
+                "category": "category_no_spaces",
+                "project_uri": "https://...",
+                "about": "Briefly talk about the tool",
+                "install_path":"/path/to/tool (should align with `self.install_path_check` in it's install_module)",
+                "author":"Who wrote/owns this? (GitHub repo username is OK)",
+                "comment":""
+              }
+        },
+        "wifi":{
+             
+        },
+        "windows-domains":{
+
+        },
+        "exploit":{
+            
+        }
+    }
+}

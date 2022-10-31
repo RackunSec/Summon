@@ -1,0 +1,861 @@
+{
+  "repo_version": "4.0",
+  "apps_list": {
+    "wifi": {
+      "aircrack-ng": {
+        "name": "Aircrack-ng",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "wifi",
+        "project_uri": "https://github.com/aircrack-ng/aircrack-ng",
+        "about": "Aircrack-ng is a complete suite of tools to assess WiFi network security",
+        "install_path": "/usr/local/sbin/",
+        "author": "Aircrack.org",
+        "comment": ""
+      },
+      "reaver": {
+        "name": "Reaver",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "wifi",
+        "project_uri": "https://github.com/t6x/reaver-wps-fork-t6x",
+        "about": "Reaver implements a brute force attack against Wifi Protected Setup (WPS) registrar PINs",
+        "install_path": "",
+        "author": "t6x",
+        "comment": ""
+      },
+      "bully": {
+        "name": "Bully",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "wifi",
+        "project_uri": "https://github.com/aanarchyy/bully",
+        "about": "Bully is a new implementation of the WPS brute force attack, written in C",
+        "install_path": "",
+        "author": "aanarchyy",
+        "comment": ""
+      },
+      "cowpatty": {
+        "name": "CoWPAtty",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "wifi",
+        "project_uri": "https://github.com/joswr1ght/cowpatty",
+        "about": "Brute-force dictionary attack against WPA-PSK",
+        "install_path": "",
+        "author": "joswr1ght",
+        "comment": ""
+      },
+      "macchanger": {
+        "name": "MAC Changer",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "wifi",
+        "project_uri": "https://github.com/alobbs/macchanger",
+        "about": "Utility that makes the manipulation of MAC addresses easier",
+        "install_path": "",
+        "author": "alobbs",
+        "comment": ""
+      },
+      "hcxtools": {
+        "name": "HCX Tools",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "wifi",
+        "project_uri": "https://github.com/ZerBea/hcxtools",
+        "about": "Small set of tools convert packets from captures for the use with latest hashcat or John the Ripper",
+        "install_path": "",
+        "author": "ZerBea",
+        "comment": ""
+      },
+      "hcxdumptool": {
+        "name": "HCXDumpTool",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "wifi",
+        "project_uri": "https://github.com/ZerBea/hcxdumptool",
+        "about": "Capture packets from wlan devices and to discover potential weak points within own WiFi networks",
+        "install_path": "",
+        "author": "ZerBea",
+        "comment": ""
+      },
+      "eaphammer": {
+        "name": "EAPHammer",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "wifi",
+        "project_uri": "https://github.com/s0lst1c3/eaphammer",
+        "about": "Toolkit for performing targeted evil twin attacks against WPA2-Enterprise networks",
+        "install_path": "",
+        "author": "s0lst1c3",
+        "comment": ""
+      },
+      "wifite2": {
+        "name": "WiFite2",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "wifi",
+        "project_uri": "https://github.com/derv82/wifite2",
+        "about": "Runs existing wireless-auditing tools for you",
+        "install_path": "",
+        "author": "derv82",
+        "comment": "Run WiFite2.py the repo with Python, not the binary in $PATH"
+      }
+    },
+    "windows-domains": {
+      "responder": {
+        "name": "Responder",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/lgandx/Responder",
+        "about": "IPv6/IPv4 LLMNR/NBT-NS/mDNS Poisoner and NTLMv1/2 Relay",
+        "install_path": "",
+        "author": "lgandx",
+        "comment": ""
+      },
+      "smbmap": {
+        "name": "SMBMap",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/ShawnDEvans/smbmap",
+        "about": "SMBMap allows users to enumerate samba share drives across an entire domain",
+        "install_path": "",
+        "author": "ShawnDEvans",
+        "comment": ""
+      },
+      "mitm6": {
+        "name": "MitM6",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/dirkjanm/mitm6",
+        "about": "Exploits the default configuration of Windows to take over the default DNS server",
+        "install_path": "",
+        "author": "dirkjanm",
+        "comment": ""
+      },
+      "pre2k": {
+        "name": "Pre2k",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/garrettfoster13/pre2k",
+        "about": "Tool to query for the existence of pre-windows 2000 computer objects",
+        "install_path": "",
+        "author": "garrettfoster13",
+        "comment": ""
+      },
+      "cheeseounce": {
+        "name": "CheeseOunce",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/evilashz/CheeseOunce",
+        "about": "Simple POC make windows machines auth to another via MS-EVEN",
+        "install_path": "",
+        "author": "evilashz",
+        "comment": ""
+      },
+      "lyncsmash": {
+        "name": "LyncSmash",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/nyxgeek/lyncsmash",
+        "about": "Tools to enumerate and attack self-hosted Skype for Business and Microsoft Lync installations",
+        "install_path": "",
+        "author": "nyxgeek",
+        "comment": ""
+      },
+      "bloodhound-python": {
+        "name": "BloodHound-Python Ingestor",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/BloodHoundAD/BloodHound",
+        "about": "Python Implementation of the BloodHound Ingestor",
+        "install_path": "",
+        "author": "fox-it",
+        "comment": ""
+      },
+      "bloodhound": {
+        "name": "BloodHound (App)",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/BloodHoundAD/BloodHound",
+        "about": "BloodHound uses graph theory to reveal the hidden and often unintended relationships within an Active Directory",
+        "install_path": "",
+        "author": "Specter Ops Inc.",
+        "comment": ""
+      },
+      "ldapdomaindump": {
+        "name": "LDAPDomainDump",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/dirkjanm/ldapdomaindump",
+        "about": "Active Directory information dumper via LDAP",
+        "install_path": "",
+        "author": "dirkjanm",
+        "comment": ""
+      },
+      "certipy": {
+        "name": "Certipy",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/ly4k/Certipy",
+        "about": "Offensive tool for enumerating and abusing Active Directory Certificate Services",
+        "install_path": "",
+        "author": "ly4k",
+        "comment": ""
+      },
+      "coercer": {
+        "name": "Coercer",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/p0dalirius/Coercer",
+        "about": "Automatically coerce a Windows server to authenticate on an arbitrary machine through 9 methods.",
+        "install_path": "",
+        "author": "p0dalirius",
+        "comment": ""
+      },
+      "enum4linux-ng": {
+        "name": "Enum4Linux-NG",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/cddmp/enum4linux-ng",
+        "about": "Tool for enumerating information from Windows and Samba systems",
+        "install_path": "",
+        "author": "cddmp",
+        "comment": ""
+      },
+      "kerbrute": {
+        "name": "Kerbrute",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/ropnop/kerbrute",
+        "about": "A tool to quickly bruteforce and enumerate valid Active Directory accounts through Kerberos Pre-Authentication",
+        "install_path": "",
+        "author": "ropnop",
+        "comment": ""
+      },
+      "krbrelayx": {
+        "name": "KrbRelayX",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/dirkjanm/krbrelayx",
+        "about": "Toolkit for abusing Kerberos",
+        "install_path": "",
+        "author": "dirkjanm",
+        "comment": ""
+      },
+      "lsassy": {
+        "name": "LSASSy",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/Hackndo/lsassy",
+        "about": "Python tool to remotely extract credentials on a set of hosts",
+        "install_path": "",
+        "author": "Hackndo",
+        "comment": ""
+      },
+      "rbcd-attack": {
+        "name": "RBCD-Attack",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/tothi/rbcd-attack",
+        "about": "Practical attack against Kerberos Resource-Based Constrained Delegation in a Windows Active Directory Domain",
+        "install_path": "",
+        "author": "tothi",
+        "comment": ""
+      },
+      "crackmapexec": {
+        "name": "CrackMapExec",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/Porchetta-Industries/CrackMapExec",
+        "about": "Post-exploitation tool that helps automate assessing the security of large Active Directory networks",
+        "install_path": "",
+        "author": "Porchetta Industries",
+        "comment": ""
+      },
+      "impacket": {
+        "name": "Impacket",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/SecureAuthCorp/impacket",
+        "about": "Collection of Python classes for working with network protocols",
+        "install_path": "",
+        "author": "SecureAuthCorp",
+        "comment": ""
+      },
+      "evil-winrm": {
+        "name": "Evil-WinRM",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/Hackplayers/evil-winrm",
+        "about": "ultimate WinRM shell for hacking/pentesting",
+        "install_path": "",
+        "author": "Hackplayers",
+        "comment": ""
+      },
+      "ghostpack-binaries": {
+        "name": "Ghostpack Pre-Compiled Windows Binaries",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/r3motecontrol/Ghostpack-CompiledBinaries",
+        "about": "Compiled binaries for GhostPack authored by @harmj0y",
+        "install_path": "",
+        "author": "r3motecontrol",
+        "comment": ""
+      },
+      "bofhound": {
+        "name": "BOFHound",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/fortalice/bofhound",
+        "about": "Offline BloodHound ingestor and LDAP result parser compatible with TrustedSec's ldapsearch BOF and the Python adaptation, pyldapsearch",
+        "install_path": "",
+        "author": "fortalice",
+        "comment": ""
+      },
+      "pyldapsearch": {
+        "name": "PyLDAPSearch",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/fortalice/pyldapsearch",
+        "about": "Python port of the ldapsearch BOF by TrustedSec",
+        "install_path": "",
+        "author": "fortalice",
+        "comment": ""
+      },
+      "zerologon": {
+        "name": "ZeroLogon",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/risksense/zerologon",
+        "about": "ZeroLogon exploitation script",
+        "install_path": "",
+        "author": "risksense",
+        "comment": ""
+      },
+      "ritm": {
+        "name": "Roast in the Middle",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/Tw1sm/RITM",
+        "about": "Python implementation of the man-in-the-middle attack described by Charlie Clark",
+        "install_path": "",
+        "author": "Tw1sm - Matthew Creel",
+        "comment": ""
+      }
+    },
+    "exploit": {
+      "searchsploit": {
+        "name": "Exploitdb Searchsploit",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "exploit",
+        "project_uri": "https://github.com/offensive-security/exploitdb",
+        "about": "Archive of public exploits and corresponding vulnerable software",
+        "install_path": "",
+        "author": "Offensive Security",
+        "comment": ""
+      },
+      "metasploit": {
+        "name": "Metasploit Framework",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "exploit",
+        "project_uri": "https://github.com/rapid7/metasploit-framework",
+        "about": "The world\u2019s most used penetration testing framework",
+        "install_path": "",
+        "author": "Rapid7",
+        "comment": ""
+      }
+    },
+    "web": {
+      "sqlmap": {
+        "name": "SQLMap",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "web",
+        "project_uri": "https://sqlmap.org/",
+        "about": "Tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers",
+        "install_path": "",
+        "author": "Bernardo Damele Assumpcao Guimaraes, Miroslav Stampar",
+        "comment": ""
+      },
+      "nikto": {
+        "name": "Nikto2",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "web",
+        "project_uri": "https://cirt.net/Nikto2",
+        "about": "Web server scanner which performs comprehensive tests against web servers for multiple items, including over 6700 potentially dangerous files/programs",
+        "install_path": "",
+        "author": "Chris Sullo",
+        "comment": ""
+      },
+      "jwt-tool": {
+        "name": "JWT Tool",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "web",
+        "project_uri": "https://github.com/ticarpi/jwt_tool",
+        "about": "Toolkit for validating, forging, scanning and tampering JWTs",
+        "install_path": "",
+        "author": "ticarpi",
+        "comment": ""
+      },
+      "wfuzz": {
+        "name": "Wfuzz",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "web",
+        "project_uri": "https://github.com/xmendez/wfuzz",
+        "about": "Tool for web applications assessments",
+        "install_path": "",
+        "author": "xmendez",
+        "comment": ""
+      },
+      "byp4xx": {
+        "name": "Byp4xx",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "web",
+        "project_uri": "https://github.com/lobuhi/byp4xx",
+        "about": "Python script for 40X responses bypassing",
+        "install_path": "",
+        "author": "lobuhi",
+        "comment": ""
+      },
+      "sslyze": {
+        "name": "SSLyze",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "web",
+        "project_uri": "https://github.com/nabla-c0d3/sslyze",
+        "about": "A fast and powerful SSL/TLS scanning tool and Python library",
+        "install_path": "",
+        "author": "nabla-c0d3",
+        "comment": ""
+      },
+      "eyewitness": {
+        "name": "EyeWitness",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "web",
+        "project_uri": "https://github.com/FortyNorthSecurity/EyeWitness",
+        "about": "Take screenshots of websites provide some server header info, and identify default credentials if known",
+        "install_path": "",
+        "author": "Forty North Security",
+        "comment": ""
+      },
+      "batchql": {
+        "name": "BatchQL",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "web",
+        "project_uri": "https://github.com/assetnote/batchql",
+        "about": "GraphQL security auditing script with a focus on performing batch GraphQL queries and mutations",
+        "install_path": "",
+        "author": "assetnote",
+        "comment": ""
+      },
+      "graphqlmap": {
+        "name": "GraphQLMap",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "web",
+        "project_uri": "https://github.com/swisskyrepo/GraphQLmap",
+        "about": "Scripting engine to interact with a graphql endpoint for pentesting purposes",
+        "install_path": "",
+        "author": "swisskyrepo",
+        "comment": ""
+      },
+      "graphql-enum-path": {
+        "name": "GraphQL Enum Path",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "web",
+        "project_uri": "https://gitlab.com/dee-see/graphql-path-enum",
+        "about": "Tool that lists the different ways of reaching a given type in a GraphQL schema",
+        "install_path": "",
+        "author": "dee-see",
+        "comment": ""
+      },
+      "drupwn": {
+        "name": "DruPWN",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "web",
+        "project_uri": "https://github.com/immunIT/drupwn",
+        "about": "Drupwn claims to provide an efficient way to gather drupal information",
+        "install_path": "",
+        "author": "immunIT",
+        "comment": ""
+      },
+      "zap": {
+        "name": "OWASP Zed Attack Proxy",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "web",
+        "project_uri": "https://owasp.org/www-project-zap/",
+        "about": "Web Application Proxy and Scanner",
+        "install_path": "",
+        "author": "OWASP",
+        "comment": ""
+      }
+    },
+    "misc": {
+      "ulauncher": {
+        "name": "Ulauncher",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "misc",
+        "project_uri": "https://ulauncher.io/",
+        "about": "Application launcher for Linux",
+        "install_path": "",
+        "author": "Free Software Foundation, Inc.",
+        "comment": ""
+      },
+      "atomio": {
+        "name": "Atom IDE",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "misc",
+        "project_uri": "https://atom.io/",
+        "about": "Open source IDE",
+        "install_path": "",
+        "author": "Github",
+        "comment": ""
+      },
+      "vscode": {
+        "name": "Visual Studio Code IDE",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "misc",
+        "project_uri": "https://code.visualstudio.com/",
+        "about": "Vscode IDE - Code Editing, Redefined",
+        "install_path": "",
+        "author": "Microsoft",
+        "comment": ""
+      }
+    },
+    "databases": {
+      "dbeaver-ce": {
+        "name": "DBeaver",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "databases",
+        "project_uri": "https://dbeaver.io/",
+        "about": "Multi-platform database tool for developers, database administrators, analysts and all people who need to work with databases",
+        "install_path": "",
+        "author": "DBeaver",
+        "comment": ""
+      },
+      "neo4j": {
+        "name": "Neo4J",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "databases",
+        "project_uri": "https://neo4j.com/",
+        "about": "This is required for BloodHound",
+        "install_path": "",
+        "author": "Neo4j, Inc.",
+        "comment": ""
+      }
+    },
+    "passwords": {
+      "john-the-ripper": {
+        "name": "John the Ripper",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "passwords",
+        "project_uri": "https://www.openwall.com/john/",
+        "about": "Password security auditing and password recovery tool available for many operating systems",
+        "install_path": "",
+        "author": "OpenWall",
+        "comment": ""
+      },
+      "spraycharles": {
+        "name": "SprayCharles",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "passwords",
+        "project_uri": "https://github.com/Tw1sm/spraycharles",
+        "about": "Low and slow password spraying tool, designed to spray on an interval over a long period of time",
+        "install_path": "",
+        "author": "Tw1sm - Matthew Creel",
+        "comment": ""
+      },
+      "defaultcreds-cheat-sheet": {
+        "name": "DefaultCreds Cheat Sheet",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "passwords",
+        "project_uri": "https://github.com/ihebski/DefaultCreds-cheat-sheet",
+        "about": "One place for all the default credentials to assist pentesters during an engagement",
+        "install_path": "",
+        "author": "ihebski",
+        "comment": ""
+      },
+      "pypassgen": {
+        "name": "PyPassGen",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "passwords",
+        "project_uri": "https://github.com/pbssubhash/PyPassGen",
+        "about": "Python Password Generator",
+        "install_path": "",
+        "author": "pbssubhash",
+        "comment": ""
+      }
+    },
+    "wordlists": {
+      "seclists": {
+        "name": "SecLists",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "wordlists",
+        "project_uri": "https://github.com/danielmiessler/SecLists",
+        "about": "Collection of multiple types of lists used during security assessments, collected in one place",
+        "install_path": "",
+        "author": "Daniel Miessler",
+        "comment": ""
+      },
+      "rockyou": {
+        "name": "Rockyou.txt",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "wordlists",
+        "project_uri": "https://github.com/praetorian-inc/Hob0Rules/tree/master/wordlists",
+        "about": "Large file of leaked passwords",
+        "install_path": "",
+        "author": "Hob0Rules",
+        "comment": ""
+      }
+    },
+    "osint": {
+      "bbot": {
+        "name": "Bighuge BLS OSINT Tool",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "osint",
+        "project_uri": "https://github.com/blacklanternsecurity/bbot",
+        "about": "OSINT Automation for Hackers",
+        "install_path": "",
+        "author": "Black Lantern Security",
+        "comment": ""
+      },
+      "theharvester": {
+        "name": "The Harvester",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "osint",
+        "project_uri": "https://github.com/laramies/theHarvester",
+        "about": "Tool designed to be used during the reconnaissance stage of a redteam assessment or penetration test",
+        "install_path": "",
+        "author": "laramies",
+        "comment": ""
+      }
+    },
+    "rackunsec": {
+      "py-ad-tools": {
+        "name": "Python AD Tools",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "rackunsec",
+        "project_uri": "https://github.com/RackunSec/py-ad-tools",
+        "about": "Python Scripts Used During Active Directory Engagements",
+        "install_path": "",
+        "author": "RackunSec",
+        "comment": ""
+      },
+      "py-web-tools": {
+        "name": "Python Web Tools",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "rackunsec",
+        "project_uri": "https://github.com/RackunSec/py-web-tools",
+        "about": "Python Scripts Used During Web Application Engagements",
+        "install_path": "",
+        "author": "RackunSec",
+        "comment": ""
+      },
+      "qdehashed": {
+        "name": "Q-Dehashed",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "rackunsec",
+        "project_uri": "",
+        "about": "Unofficial Dehashed API Tool",
+        "install_path": "",
+        "author": "RackunSec",
+        "comment": ""
+      },
+      "cme-modules": {
+        "name": "CrackMapExec Modules",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "rackunsec",
+        "project_uri": "https://github.com/RackunSec/cme-modules",
+        "about": "RackunSec's CrackMapExec Modules",
+        "install_path": "",
+        "author": "RackunSec",
+        "comment": "Run this application with poetry"
+      },
+      "rackun-wordlists": {
+        "name": "RackunSec Wordlists",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "rackunsec",
+        "project_uri": "https://github.com/RackunSec/rackun-wordlists",
+        "about": "RackunSec's Wordlists",
+        "install_path": "",
+        "author": "RackunSec",
+        "comment": ""
+      }
+    },
+    "apple": {
+      "jamf-attack-toolkit": {
+        "name": "JAMF Attack Toolkit",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "apple",
+        "project_uri": "https://github.com/WithSecureLabs/Jamf-Attack-Toolkit",
+        "about": "Suite of tools to facilitate attacks against the Jamf macOS management platform",
+        "install_path": "",
+        "author": "With Secure Labs",
+        "comment": ""
+      }
+    },
+    "printers": {
+      "pret": {
+        "name": "Printer Exploitation Toolkit",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "printers",
+        "project_uri": "https://github.com/RUB-NDS/PRET",
+        "about": "Tool for printer security testing developed in the scope of a Master's Thesis at Ruhr University Bochum",
+        "install_path": "",
+        "author": "RUB-NDS",
+        "comment": ""
+      }
+    },
+    "enum": {
+      "masscan": {
+        "name": "MasScan",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "False",
+        "category": "enum",
+        "project_uri": "https://github.com/robertdavidgraham/masscan",
+        "about": "Internet-scale port scanner",
+        "install_path": "",
+        "author": "Robert David Graham",
+        "comment": ""
+      }
+    },
+    "payloads": {
+      "freeze": {
+        "name": "Freeze",
+        "add": "False",
+        "demon_version": "4.0",
+        "installed": "True",
+        "category": "payloads",
+        "project_uri": "https://github.com/optiv/Freeze",
+        "about": "Payload creation tool used for circumventing EDR security controls to execute shellcode in a stealthy manner",
+        "install_path": "",
+        "author": "Optiv",
+        "comment": ""
+      }
+    }
+  }
+}
