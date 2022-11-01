@@ -43,6 +43,10 @@ def main(): ## This is mainly for handling input and sending tasks off to be don
         files=Files()
         files.build_redteam() ## if not there, build it.
         
+        ## Check existence of conf file:
+        repo=Repo()
+        repo.check_config_file()
+
         ## Capture Force from arguments if there:
         if "--force" in sys.argv:
             force=True

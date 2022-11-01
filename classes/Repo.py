@@ -18,6 +18,7 @@ class Repo():
         self.repo_file = "/etc/demon/apps_repo/demon_apps.json"
         self.current_ver_uri="https://raw.githubusercontent.com/RackunSec/Summon/main/version.txt"
         self.style = Style()
+        self.cwd=os.getcwd() ## Were are we running from?
 
     ## Show all applications
     ##  calls display_app_info() for each application defined in the JSON file:
@@ -132,7 +133,6 @@ class Repo():
 
     ## Check for updates:
     def update_check(self):
-        style=Style()
         shell=Shell()
         import requests ## for HTTP request
         if os.path.exists(self.repo_file): ## We need a version first
@@ -143,13 +143,13 @@ class Repo():
             if local_version != "":
                 response = requests.get(self.current_ver_uri)
                 current_version = response.text.strip()
-            print(f"{style.info} Local version: {local_version}")
-            print(f"{style.info} Current version: {current_version}")
+            print(f"{self.style.info} Local version: {local_version}")
+            print(f"{self.style.info} Current version: {current_version}")
             if local_version == current_version:
-                print(f"{style.info} Up to date.")
+                print(f"{self.tyle.info} Up to date.")
                 return False
             else:
-                print(f"{style.info} An update is ready for you!")
+                print(f"{self.style.info} An update is ready for you!")
                 #shell.run_cmd(["notify-send","Summon","'Summon Updates Available'","--icon=software-update-urgent"])
                 shell.run_cmd(["notify-send","Summon",f"Summon Updates Available ({current_version})","--icon=/usr/share/demon/images/icons/summon.png"])
                 ## Check if using XCFE4 Panel Icon:
@@ -162,14 +162,23 @@ class Repo():
                     shell.run_cmd(["sed","-i","s/summon.png/summon-update.png/",xfce4_panel_icon_file]) ## change the icon
                 return True
         else:
-            print(f"{style.fail} Could not read version file: {self.local_ver_file}")
+            print(f"{self.style.fail} Could not read version file: {self.local_ver_file}")
         return
+
+    ## Ensure the health/existence of the config file:
+    def check_config_file(self):
+        if not os.path.exists("/etc/demon/summon.conf"):
+            ans=input(f"{self.style.ques} We are running from {self.style.RED}{self.cwd}{self.style.RST} Would you like to make this your Summon binary path [y/n]? ")
+            if ans=="y":
+                config=ConfigParser()
+                config['SUMMON']= {"summon_path":self.cwd}
+            with open("/etc/demon/summon.conf","w") as config_file:
+                config_file.write(config)
 
 
     ## Restore from the backup in case something tragic happens:
     def restore_repo(self):
-        style=Style()
         shell=Shell()
-        print(f"{style.info} Restoring repository from backup ... ")
+        print(f"{self.style.info} Restoring repository from backup ... ")
         shell.run_cmd(["cp","/etc/demon/apps_repo/demon_apps_backup.json","/etc/demon/apps_repo/demon_apps.json"])
         self.update_check()
