@@ -146,16 +146,13 @@ class Repo():
             print(f"{self.style.info} Local version: {local_version}")
             print(f"{self.style.info} Current version: {current_version}")
             if local_version == current_version:
-                print(f"{self.tyle.info} Up to date.")
+                print(f"{self.style.info} Up to date.")
                 return False
             else:
                 print(f"{self.style.info} An update is ready for you!")
                 #shell.run_cmd(["notify-send","Summon","'Summon Updates Available'","--icon=software-update-urgent"])
                 shell.run_cmd(["notify-send","Summon",f"Summon Updates Available ({current_version})","--icon=/usr/share/demon/images/icons/summon.png"])
-                ## Check if using XCFE4 Panel Icon:
-                home_dir = os.path.expanduser("~")
-                #print(f"{style.info} Home directory: {home_dir}")
-                xfce4_panel_icon_file = subprocess.run(["egrep","-iElr","summon",f"{home_dir}/.config/xfce4/panel/"], stdout=subprocess.PIPE)
+                xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
                 if xfce4_panel_icon_file!="":
                     xfce4_panel_icon_file=str(xfce4_panel_icon_file.stdout.decode()).strip()
                     #print(f"{style.info} Found XFCE4 Panel icon location: {xfce4_panel_icon_file}")
@@ -172,9 +169,18 @@ class Repo():
             if ans=="y":
                 config=ConfigParser()
                 config['SUMMON']= {"summon_path":self.cwd}
+                ## Now we need to fix the Summon XFCE4 Panel Icon:
+                xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
+                if xfce4_panel_icon_file!="":
+                    shell=Shell()
+                    shell.run_cmd(["sed","-ir",f"s/.opt.demon/{self.cwd}/"])
             with open("/etc/demon/summon.conf","w") as config_file:
-                config_file.write(config)
+                config.write(config_file)
 
+
+    def get_summon_icon_file(self):
+        home_dir = os.path.expanduser("~")
+        return subprocess.run(["egrep","-iElr","summon",f"{home_dir}/.config/xfce4/panel/"], stdout=subprocess.PIPE)
 
     ## Restore from the backup in case something tragic happens:
     def restore_repo(self):
