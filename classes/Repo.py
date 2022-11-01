@@ -98,6 +98,12 @@ class Repo():
             with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
                 repo_json = json.load(config)
                 local_version = repo_json['repo_version']
+            sudo_user=os.getlogin() ## User ran SUDO:
+            home_dir = os.path.expanduser(f"/home/{sudo_user}/")
+            xfce4_panel_icon_file = subprocess.run(["egrep","-iElr","summon",f"{home_dir}/.config/xfce4/panel/"], stdout=subprocess.PIPE)
+            if xfce4_panel_icon_file!="":
+                xfce4_panel_icon_file=str(xfce4_panel_icon_file.stdout.decode()).strip()
+                shell.run_cmd(["sed","-i","s/summon-update.png/summon.png/",xfce4_panel_icon_file]) ## change the icon
             print(f"{self.style.sing} {self.style.CMNT}Summon updated successfully to {self.style.GREEN}{local_version}{self.style.RST}.")
             return
 
