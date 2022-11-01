@@ -140,7 +140,7 @@ class Repo():
         if xfce4_panel_icon_file!="":
             shell=Shell()
             mycwd = str(self.cwd.replace("/","\/")) ## Escape forwardslashes for sed
-            shell.run_cmd(["sed","-ir",f"s/.opt.demon/{mycwd}/",xfce4_panel_icon_file])
+            shell.run_cmd(["sed","-ir",f"s/.opt.demon/{str(mycwd)}/",xfce4_panel_icon_file])
 
         import requests ## for HTTP request
         if os.path.exists(self.repo_file): ## We need a version first
