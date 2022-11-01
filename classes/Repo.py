@@ -139,7 +139,7 @@ class Repo():
         xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
         if xfce4_panel_icon_file!="":
             shell=Shell()
-            mycwd = os.cwd().replace("/","\/") ## Escape forwardslashes for sed
+            mycwd = self.cwd.replace("/","\/") ## Escape forwardslashes for sed
             shell.run_cmd(["sed","-ir",f"s/.opt.demon/{mycwd}/",xfce4_panel_icon_file])
 
         import requests ## for HTTP request
