@@ -146,7 +146,7 @@ class Repo():
             with open(xfce4_panel_icon_file,"w") as icon_file: ## overwrite it:
                 icon_file.writelines(lines)
 
-        self.update_autostart_script(os.getlogin) ## update this file too.
+        self.update_autostart_script(os.getlogin()) ## update this file too.
 
         import requests ## for HTTP request
         if os.path.exists(self.repo_file): ## We need a version first
