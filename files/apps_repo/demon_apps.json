@@ -866,7 +866,19 @@
         "category": "cloud",
         "project_uri": "https://github.com/BishopFox/cloudfox",
         "about": "Gain situational awareness in unfamiliar cloud environments",
-        "install_path": "",
+        "install_path": "/redteam/cloud/CloudFox",
+        "author": "BishopFox",
+        "comment": ""
+      },
+      "aws-cli":{
+        "name": "AWS CLI v2",
+        "add": "False",
+        "demon_version": "4.1",
+        "installed": "False",
+        "category": "cloud",
+        "project_uri": "https://aws.amazon.com/cli/",
+        "about": "A unified tool to manage your AWS services",
+        "install_path": "/redteam/cloud/aws",
         "author": "BishopFox",
         "comment": ""
       }

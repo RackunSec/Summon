@@ -58,7 +58,7 @@ class Repo():
 
     ## Display application info to scree:
     def display_app_info(self,repo_json,category,app):
-        print(f"  {self.style.PPUR}┌{self.style.PINK}{repo_json['apps_list'][category][app]['name']}:{self.style.RST} ",end="")
+        print(f"  {self.style.PPUR}┌{self.style.PPUR}[{self.style.YLL}{repo_json['apps_list'][category][app]['name']}{self.style.PPUR}]{self.style.RST}: ",end="")
         if repo_json['apps_list'][category][app]['installed']=="True":
             print(f"({self.style.CMNT}{self.style.GREEN}Installed{self.style.RST})")
         else:
@@ -67,13 +67,13 @@ class Repo():
             comment = "None"
         else:
             comment = repo_json['apps_list'][category][app]['comment']
-        print(f"  {self.style.subapplist}{self.style.PPUR}About: {self.style.CMNT}{repo_json['apps_list'][category][app]['about']}{self.style.RST}")
-        print(f" {self.style.subpipe}{self.style.PPUR}Summon Version: {self.style.CMNT}{repo_json['apps_list'][category][app]['demon_version']}{self.style.RST}")
-        print(f" {self.style.subpipe}{self.style.PPUR}Project URI: {self.style.CMNT}{repo_json['apps_list'][category][app]['project_uri']}{self.style.RST}")
-        print(f" {self.style.subpipe}{self.style.PPUR}Author: {self.style.CMNT}{repo_json['apps_list'][category][app]['author']}{self.style.RST}")
-        print(f" {self.style.subpipe}{self.style.PPUR}Comment: {self.style.CMNT}{comment}{self.style.RST}")
-        print(f" {self.style.subpipe}{self.style.PPUR}Install Path: {self.style.CMNT}{repo_json['apps_list'][category][app]['install_path']}{self.style.RST}")
-        print(f" {self.style.subpipebot}{self.style.PPUR}How to Install: {self.style.CMNT}{self.style.PINK}python3 summon.py install {app}{self.style.RST}\n")
+        print(f"  {self.style.subapplist}{self.style.PPIN}About{self.style.PPUR}: {self.style.CMNT}{repo_json['apps_list'][category][app]['about']}{self.style.RST}")
+        print(f" {self.style.subpipe}{self.style.PPIN}Summon Version{self.style.PPUR}: {self.style.CMNT}{repo_json['apps_list'][category][app]['demon_version']}{self.style.RST}")
+        print(f" {self.style.subpipe}{self.style.PPIN}Project URI{self.style.PPUR}: {self.style.CMNT}{repo_json['apps_list'][category][app]['project_uri']}{self.style.RST}")
+        print(f" {self.style.subpipe}{self.style.PPIN}Author{self.style.PPUR}: {self.style.CMNT}{repo_json['apps_list'][category][app]['author']}{self.style.RST}")
+        print(f" {self.style.subpipe}{self.style.PPIN}Comment{self.style.PPUR}: {self.style.CMNT}{comment}{self.style.RST}")
+        print(f" {self.style.subpipe}{self.style.PPIN}Install Path{self.style.PPUR}: {self.style.CMNT}{repo_json['apps_list'][category][app]['install_path']}{self.style.RST}")
+        print(f" {self.style.subpipebot}{self.style.PPIN}How to Install{self.style.PPUR}: {self.style.CMNT}{self.style.PINK}python3 summon.py install {app}{self.style.RST}\n")
 
         return
 
