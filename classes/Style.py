@@ -63,7 +63,8 @@ class Style:
       print(f"      {self.PPIN}list-apps{self.CMNT} - List all Redteam apps in local repository{self.RST}")
       print(f"      {self.PPIN}app-info (App Name){self.CMNT} - Get application info from local repository{self.RST}")
       print(f"      {self.PPIN}version{self.CMNT} - Version your Demon repository{self.RST}")
-      print(f"      {self.PPIN}upgrade{self.CMNT} - Upgrade your Demon app repository{self.RST}\n")
+      print(f"      {self.PPIN}upgrade{self.CMNT} - Upgrade your Demon app repository{self.RST}")
+      print(f"      {self.PPIN}restore-repo{self.CMNT} - Restores a broken repository from backup{self.RST}\n")
       exit(1337) ## Exit with code
 
     ## Show some installation examples:

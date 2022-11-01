@@ -92,6 +92,9 @@ def main(): ## This is mainly for handling input and sending tasks off to be don
             repo.update_check()
         elif sys.argv[1]=="upgrade":
             upgrade_summon()
+        elif sys.argv[1]=="restore-repo":
+            repo=Repo()
+            repo.restore_repo() ## Restore the repository
         else:
             style.usage() ## I dunno
 

@@ -164,3 +164,12 @@ class Repo():
         else:
             print(f"{style.fail} Could not read version file: {self.local_ver_file}")
         return
+
+
+    ## Restore from the backup in case something tragic happens:
+    def restore_repo(self):
+        style=Style()
+        shell=Shell()
+        print(f"{style.info} Restoring repository from backup ... ")
+        shell.run_cmd(["cp","/etc/demon/apps_repo/demon_apps_backup.json","/etc/demon/apps_repo/demon_apps.json"])
+        self.update_check()
