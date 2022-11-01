@@ -20,6 +20,7 @@ class Repo():
         self.style = Style()
         self.cwd=os.getcwd() ## Were are we running from
         self.config_path="/etc/demon/summon.conf"
+        self.check_config_file() ## need this.
         self.summon_path=self.get_install_path()
 
     ## Show all applications
