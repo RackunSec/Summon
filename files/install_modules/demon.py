@@ -12,6 +12,7 @@ from classes.Shell import Shell
 from classes.Python import Python
 from classes.Style import Style
 from classes.Files import Files
+from classes.Repo import Repo
 import os
 import stat
 from sys import exit
@@ -24,6 +25,8 @@ class Application():
         self.python = Python()
         self.files = Files()
         self.style = Style()
+        self.repo=Repo()
+        
         self.user = user ## We are forcing an installation 
         ## Common place to download stuff from:
         self.demon_repo = "https://demonlinux.com/download/packages/4.X/"
@@ -102,10 +105,12 @@ class Application():
             ## update Grub:
             self.shell.run_cmd(["grub-mkconfig","-o","/boot/grub/grub.cfg"])
             self.shell.run_cmd(["update-grub"])
+            self.repo.update_autostart_script(self.user)
 
         else:
             os.unlink("/root/root.tgz") ## delete it
         os.chdir(self.apps.current_dir) ## go back
+        self.repo.update_autostart_script("root") ## Do this for root user too.
 
         self.files.build_redteam() ## Build the /redteam tree
         self.files.download_base_files() ## Download the base files

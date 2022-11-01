@@ -193,6 +193,17 @@ class Repo():
             with open("/etc/demon/summon.conf","w") as config_file:
                 config.write(config_file)
 
+    def update_autostart_script(self,user):
+        home_dir=f"/home/{user}/.config/autostart/"
+        script=str(subprocess.run(["egrep","-iElr","opt.demon",home_dir],stdout=subprocess.PIPE).stdout.decode().strip())
+        import re
+        if script != "":
+            with open(script,"r") as script_file:
+                script_lines=script_file.readlines()
+            for index,line in enumerate(script_lines):
+                if re.search(r'^Exec',line):
+                    script_lines[index]=line.replace("/opt/demon",self.summon_path)
+            print(script_lines)
 
     def get_summon_icon_file(self):
         home_dir = os.path.expanduser("~")
