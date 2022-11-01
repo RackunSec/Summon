@@ -32,7 +32,7 @@ class Application():
         ## Or sometimes, it's just the local GitHub repository:
 
         ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-        self.install_path_check ="/usr/sbin/wifite/Wifite.py" ## This file will exist when the application is properly installed.
+        self.install_path_check ="/redteam/wifi/wifite2/Wifite.py" ## This file will exist when the application is properly installed.
         self.badpaths=["/redteam/wifi/wifite2"] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         
@@ -49,6 +49,7 @@ class Application():
             self.shell.run_cmd(["python3","setup.py","install"])
             self.python.pip_install_dot("/redteam/wifi/wifite2")
             os.chdir(self.apps.current_dir) ## go back
+            self.apps.apt_install(["wireless-tools"])
             self.shell.run_cmd(["rm","-rf","/usr/sbin/wifite"]) ## This binary never works. Run from the repo.
 
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

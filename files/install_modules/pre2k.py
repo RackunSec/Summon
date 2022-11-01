@@ -32,7 +32,7 @@ class Application():
         ## Or sometimes, it's just the local GitHub repository:
 
         ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-        self.install_path_check ="/redteam/windows-domains/pre2k/pre2k.py" ## This file will exist when the application is properly installed.
+        self.install_path_check ="/redteam/windows-domains/pre2k/pre2k/lib/pre_2k.py" ## This file will exist when the application is properly installed.
         self.badpaths=["/redteam/windows-domains/pre2k/"] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         
@@ -45,7 +45,7 @@ class Application():
         ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
         if self.apps.git_clone("https://github.com/garrettfoster13/pre2k.git","/redteam/windows-domains/","pre2k"):
-            self.python.pip_reqs("Pre2k","/redteam/windows-domains/pre2k")
+            self.python.poetry_install("/redteam/windows-domains/pre2k","Pre2k")
 
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         ## Done. Do not edit below.
