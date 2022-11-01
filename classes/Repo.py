@@ -134,6 +134,13 @@ class Repo():
     ## Check for updates:
     def update_check(self):
         shell=Shell()
+        self.check_config_file() ## Check the config file
+        ## This gets called upon each login into EXCF4, so this makes the most sense for this code to be here:
+        xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
+        if xfce4_panel_icon_file!="":
+            shell=Shell()
+            shell.run_cmd(["sed","-ir",f"s/.opt.demon/{self.cwd}/",xfce4_panel_icon_file])
+
         import requests ## for HTTP request
         if os.path.exists(self.repo_file): ## We need a version first
             ## read the version fromthe repo file using json:
@@ -169,11 +176,6 @@ class Repo():
             if ans=="y":
                 config=ConfigParser()
                 config['SUMMON']= {"summon_path":self.cwd}
-                ## Now we need to fix the Summon XFCE4 Panel Icon:
-                xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
-                if xfce4_panel_icon_file!="":
-                    shell=Shell()
-                    shell.run_cmd(["sed","-ir",f"s/.opt.demon/{self.cwd}/"])
             with open("/etc/demon/summon.conf","w") as config_file:
                 config.write(config_file)
 

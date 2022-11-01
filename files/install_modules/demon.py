@@ -106,11 +106,6 @@ class Application():
             self.shell.run_cmd(["grub-mkconfig","-o","/boot/grub/grub.cfg"])
             self.shell.run_cmd(["update-grub"])
 
-            xfce4_panel_icon_file = self.repo.get_summon_icon_file() ## Just get the file name
-            if xfce4_panel_icon_file!="":
-                shell=Shell()
-                shell.run_cmd(["sed","-ir",f"s/.opt.demon/{os.cwd()}/"])
-
         else:
             os.unlink("/root/root.tgz") ## delete it
         os.chdir(self.apps.current_dir) ## go back
