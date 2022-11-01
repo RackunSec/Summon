@@ -205,7 +205,9 @@ class Repo():
             for index,line in enumerate(script_lines):
                 if re.search(r'^Exec',line):
                     script_lines[index]=line.replace("/opt/demon",self.summon_path)
-            print(script_lines)
+            #print(script_lines)
+            with open(script,"w") as script_file: ## overwrite it
+                script_file.writelines(script_lines)
 
     def get_summon_icon_file(self):
         home_dir = os.path.expanduser("~")
