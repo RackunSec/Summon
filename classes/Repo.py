@@ -142,7 +142,8 @@ class Repo():
             for index,line in enumerate(lines):
                 if re.search("^Exec",line):
                     lines[index]=line.replace("/opt/demon",self.summon_path) ## Overwrite it.
-            print(lines)
+            with open(xfce4_panel_icon_file,"w") as icon_file: ## overwrite it:
+                icon_file.write(lines)
 
         import requests ## for HTTP request
         if os.path.exists(self.repo_file): ## We need a version first
