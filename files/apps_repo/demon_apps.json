@@ -124,6 +124,18 @@
         "author": "lgandx",
         "comment": ""
       },
+      "adidnsdump":{
+        "name":"ADI DNS Dump",
+        "add": "False",
+        "demon_version": "4.1",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/dirkjanm/adidnsdump",
+        "about": "This tool enables enumeration and exporting of all DNS records in the zone for recon purposes of internal networks",
+        "install_path": "/usr/local/bin/adidnsdump",
+        "author": "dirkjanm",
+        "comment": ""
+      },
       "smbmap": {
         "name": "SMBMap",
         "add": "False",
