@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ## 2022 - Demon Linux 4.X - Douglas Berdeaux
-## Summon Installation module for: AWS_CLI_V2
+## Summon Installation module for: Cloud Fox
 ## Module written by: @RackunSec
 ## -- Remember to add the application to demon_apps.json and enable it
 ##      by setting the value of "add" to "True"
@@ -32,8 +32,8 @@ class Application():
         ## Or sometimes, it's just the local GitHub repository:
 
         ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-        self.install_path_check ="/usr/local/bin/aws" ## This file will exist when the application is properly installed.
-        self.badpaths=["/usr/local/aws-cli","/usr/local/bin/aws","/usr/local/bin/aws_completer","/usr/local/aws-cli/"] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
+        self.install_path_check ="/redteam/cloud/CloudFox/cloudfox" ## This file will exist when the application is properly installed.
+        self.badpaths=["/redteam/cloud/CloudFox"] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         
     def install(self):
@@ -44,14 +44,14 @@ class Application():
         ## Installation instructions go here:
         ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-        self.files.download_file(self.demon_repo+"awscliv2.zip","/redteam/cloud/awscliv2.zip",True)
-        os.chdir("/redteam/cloud/")
-        self.files.unzip_file("awscliv2.zip","/redteam/cloud/")
-        os.chdir("/redteam/cloud/aws")
-        self.shell.run_cmd(["chmod","+x","install"])
-        self.shell.run_cmd(["./install","--update"])
-        os.unlink("/redteam/cloud/awscliv2.zip")
-
+        if self.apps.git_clone("https://github.com/BishopFox/cloudfox.git","/redteam/cloud/","CloudFox"):
+            os.chdir("/redteam/cloud/CloudFox/")
+            if os.path.exists("/usr/local/go/bin/go"):
+                self.shell.run_cmd(["/usr/local/go/bin/go","build","."])
+            else:
+                print(f"{self.style.fail} Go is not installed at \"/usr/local/go/bin/go\"")
+                return False
+        
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         ## Done. Do not edit below.
         return True
@@ -80,7 +80,3 @@ class Application():
         if os.path.exists(self.install_path_check):
             self.shell.run_cmd(["rm","-rf",self.install_path_check])
         return
-
-
-
-

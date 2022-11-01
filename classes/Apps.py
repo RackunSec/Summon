@@ -247,6 +247,7 @@ class Apps:
 
     ## Install a single application using ./files/install_modules files:
     def install_redteam_app(self,app,force,single):
+        module_name = self.install_modules_classes+app
         if single:
             ## Check application installation status in Repo:
             if os.path.isfile(self.demon_app_repo):
@@ -255,17 +256,29 @@ class Apps:
                     for category in config_json['apps_list']:
                         for repo_app in config_json['apps_list'][category]:
                             if repo_app == app:
-                                self.style.prnt_install(config_json['apps_list'][category][repo_app]['name'],category)
-                                if config_json['apps_list'][category][repo_app]['installed'] == "True" and not force:
-                                    print(f"{self.style.sub}{self.style.CMNT}Application {self.style.RST}{self.style.GREEN}{app}{self.style.CMNT} already installed.{self.style.RST}")
-                                    print(f"{self.style.sub}{self.style.CMNT}Use {self.style.RED}--force{self.style.CMNT} to force installation.{self.style.RST}")
-                                    return
-        module_name = self.install_modules_classes+app
+                                app_module_name = importlib.import_module(module_name)
+                                app_module = app_module_name.Application(force)
+                                if not force:
+                                    if app_module.check_install(): ## Already installed.
+                                        print(f"{self.style.sub}{self.style.CMNT}Application {self.style.RST}{self.style.GREEN}{app}{self.style.CMNT} already installed.{self.style.RST}")
+                                        print(f"{self.style.sub}{self.style.CMNT}Use {self.style.RED}--force{self.style.CMNT} to force installation.{self.style.RST}")
+                                        return True
+                                    self.style.prnt_install(config_json['apps_list'][category][repo_app]['name'],category)
+                                    if config_json['apps_list'][category][repo_app]['installed'] == "True" and not force:
+                                        print(f"{self.style.sub}{self.style.CMNT}Application {self.style.RST}{self.style.GREEN}{app}{self.style.CMNT} already installed.{self.style.RST}")
+                                        print(f"{self.style.sub}{self.style.CMNT}Use {self.style.RED}--force{self.style.CMNT} to force installation.{self.style.RST}")
+                                        return True
         if os.path.exists(self.install_modules_dir+app+".py"):
             ## install it
             app_module_name = importlib.import_module(module_name)
             app_module = app_module_name.Application(force)
             ## Check the installation status first:
+            if not force:
+                if app_module.check_install(): ## Already installed.
+                    print(f"{self.style.sub}{self.style.CMNT}Application {self.style.RST}{self.style.GREEN}{app}{self.style.CMNT} already installed.{self.style.RST}")
+                    print(f"{self.style.sub}{self.style.CMNT}Use {self.style.RED}--force{self.style.CMNT} to force installation.{self.style.RST}")
+                    return True
+
             app_module.install()
             if app_module.check_install():
                 print(f"{self.style.install_success}")
@@ -287,7 +300,5 @@ class Apps:
                 return False
         else:
             print(f"{self.style.sub}{self.style.RED}No module named {app}.py found in {self.install_modules_dir}{self.style.RST}")
-            if not single:
-                app_fail_count = app_fail_count + 1
             return False
 

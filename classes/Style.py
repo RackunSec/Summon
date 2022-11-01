@@ -34,7 +34,7 @@ class Style:
         self.subapplist=f"{self.PPIN}└───{self.PPUR}⎡{self.RST}" #  
         self.subapp=f"\n{self.PPUR}[{self.RST}"
         self.install_success=f"  {self.PPUR} └─{self.PPUR}[{self.GREEN}Installation Successful{self.RST}"
-        self.install_fail=f"  {self.PPUR} └─{self.PPUR}[{self.RED}Installation Failed{self.RST}"
+        self.install_fail=f"  {self.PPUR} └─{self.PPUR}[{self.RED} !! Installation Failed !! {self.RST}"
         self.CYAN=fg(38)
     def prnt_install(self,app,category):
         print(f" {self.subapp}{self.ORAN}{self.BOLD}Installing{self.RST} {self.PPIN}─ {self.PPUR}{self.CYAN}{app} {self.PPUR}({category}){self.RST}{self.RST}{self.PPIN} ─ {self.PPUR}]{self.RST}")
