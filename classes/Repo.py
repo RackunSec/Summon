@@ -11,6 +11,7 @@ import os ## for OS stuff
 from sys import exit
 import json ## read the config.json file.
 import subprocess ## Run command and save output to variable.
+from configparser import ConfigParser ## for reading the config file in /etc/demon
 
 class Repo():
     def __init__(self) -> None:
@@ -84,7 +85,12 @@ class Repo():
             apps=Apps()
             shell=Shell()
             self.style.prnt_install("Upgrade","Base")
-            if apps.git_pull("/opt/demon/"):
+            config=ConfigParser() ## Lets read the Summon install path
+            config.read("/etc/demon/summon.config")
+            summon_path=config['SUMMON']['summon_path']
+
+
+            if apps.git_pull(summon_path):
                 installed_apps = []
                 with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
                     repo_json = json.load(config)
@@ -94,7 +100,7 @@ class Repo():
                             if repo_json['apps_list'][category][repo_app]['installed']=="True":
                                 installed_apps.append(repo_app)
                 shell.run_cmd(["rm","-rf","/etc/demon/apps_repo/*"]) ## Remove the old repository
-                shell.run_cmd(["cp","/opt/demon/files/apps_repo/demon_apps.json","/etc/demon/apps_repo/"])
+                shell.run_cmd(["cp",summon_path+"/files/apps_repo/demon_apps.json","/etc/demon/apps_repo/"])
                 self.reset_new_repo(installed_apps) ## Write the new repo install status
                 with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
                     repo_json = json.load(config)

@@ -12,6 +12,7 @@ from classes.Shell import Shell
 from classes.Python import Python
 from classes.Style import Style
 from classes.Files import Files
+from configparser import ConfigParser ## for the configuration file
 import os
 import stat
 from sys import exit
@@ -32,8 +33,17 @@ class Application():
         ## Or sometimes, it's just the local GitHub repository:
         self.install_path_check ="/etc/demon" ## This file will exist when the application is properly installed.
         self.badpaths=[] ## if a previous installation is there, destroy it.
+        self.cwd=os.getcwd() ## Were are we running from?
         
     def install(self):
+        ## Create a config file:
+        ans=input(f"{self.style.ques} We are running from {self.cwd} Would you like to make this your Summon binary path [y/n]? ")
+        if ans=="y":
+            config=ConfigParser()
+            config['SUMMON']= {"summon_path":self.cwd}
+        with open("/etc/demon/summon.conf","w") as config_file:
+            config_file.write(config)
+        
         ## install the application:
         print(f"{self.style.sing}{self.style.BOLD} {self.style.PINK}Summoning the {self.style.CMNT}{self.style.RED}DEMON{self.style.PINK} ... {self.style.RST}")
         self.python.pip_install_upgrade("pip") ## upgrade this now.
