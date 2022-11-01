@@ -80,35 +80,36 @@ class Repo():
     ## Update the Summon repository in /etc/demon/:
     def upgrade_summon(self):
         ## Update the repository
-        apps=Apps()
-        shell=Shell()
-        self.style.prnt_install("Upgrade","Base")
-        if apps.git_pull("/opt/demon/"):
-            installed_apps = []
-            with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
-                repo_json = json.load(config)
-                local_version = repo_json['repo_version']
-                for category in repo_json['apps_list']:
-                    for repo_app in repo_json['apps_list'][category]:
-                        if repo_json['apps_list'][category][repo_app]['installed']=="True":
-                            installed_apps.append(repo_app)
-            shell.run_cmd(["rm","-rf","/etc/demon/apps_repo/*"]) ## Remove the old repository
-            shell.run_cmd(["cp","/opt/demon/files/apps_repo/demon_apps.json","/etc/demon/apps_repo/"])
-            self.reset_new_repo(installed_apps) ## Write the new repo install status
-            with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
-                repo_json = json.load(config)
-                local_version = repo_json['repo_version']
-            sudo_user=os.getlogin() ## User ran SUDO:
-            home_dir = os.path.expanduser(f"/home/{sudo_user}/")
-            xfce4_panel_icon_file = subprocess.run(["egrep","-iElr","summon",f"{home_dir}/.config/xfce4/panel/"], stdout=subprocess.PIPE)
-            if xfce4_panel_icon_file!="":
-                xfce4_panel_icon_file=str(xfce4_panel_icon_file.stdout.decode()).strip()
-                shell.run_cmd(["sed","-i","s/summon-update.png/summon.png/",xfce4_panel_icon_file]) ## change the icon
-            print(f"{self.style.sing} {self.style.CMNT}Summon updated successfully to {self.style.GREEN}{local_version}{self.style.RST}.")
-            return
+        if self.update_check():
+            apps=Apps()
+            shell=Shell()
+            self.style.prnt_install("Upgrade","Base")
+            if apps.git_pull("/opt/demon/"):
+                installed_apps = []
+                with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
+                    repo_json = json.load(config)
+                    local_version = repo_json['repo_version']
+                    for category in repo_json['apps_list']:
+                        for repo_app in repo_json['apps_list'][category]:
+                            if repo_json['apps_list'][category][repo_app]['installed']=="True":
+                                installed_apps.append(repo_app)
+                shell.run_cmd(["rm","-rf","/etc/demon/apps_repo/*"]) ## Remove the old repository
+                shell.run_cmd(["cp","/opt/demon/files/apps_repo/demon_apps.json","/etc/demon/apps_repo/"])
+                self.reset_new_repo(installed_apps) ## Write the new repo install status
+                with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
+                    repo_json = json.load(config)
+                    local_version = repo_json['repo_version']
+                sudo_user=os.getlogin() ## User ran SUDO:
+                home_dir = os.path.expanduser(f"/home/{sudo_user}/")
+                xfce4_panel_icon_file = subprocess.run(["egrep","-iElr","summon",f"{home_dir}/.config/xfce4/panel/"], stdout=subprocess.PIPE)
+                if xfce4_panel_icon_file!="":
+                    xfce4_panel_icon_file=str(xfce4_panel_icon_file.stdout.decode()).strip()
+                    shell.run_cmd(["sed","-i","s/summon-update.png/summon.png/",xfce4_panel_icon_file]) ## change the icon
+                print(f"{self.style.sing} {self.style.CMNT}Summon updated successfully to {self.style.GREEN}{local_version}{self.style.RST}.")
+                return
 
-        else:
-            print(f"{self.style.fail} Could not update the Repository.")
+            else:
+                print(f"{self.style.fail} Could not update the Repository.")
         return
 
     ## Reset New Repo:
@@ -140,7 +141,7 @@ class Repo():
             print(f"{style.info} Current version: {current_version}")
             if local_version == current_version:
                 print(f"{style.info} Up to date.")
-                return
+                return False
             else:
                 print(f"{style.info} An update is ready for you!")
                 #shell.run_cmd(["notify-send","Summon","'Summon Updates Available'","--icon=software-update-urgent"])
@@ -153,6 +154,7 @@ class Repo():
                     xfce4_panel_icon_file=str(xfce4_panel_icon_file.stdout.decode()).strip()
                     #print(f"{style.info} Found XFCE4 Panel icon location: {xfce4_panel_icon_file}")
                     shell.run_cmd(["sed","-i","s/summon.png/summon-update.png/",xfce4_panel_icon_file]) ## change the icon
+                return True
         else:
             print(f"{style.fail} Could not read version file: {self.local_ver_file}")
         return
