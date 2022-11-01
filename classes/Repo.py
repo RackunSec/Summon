@@ -136,10 +136,13 @@ class Repo():
         xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
         if xfce4_panel_icon_file!="":
             shell=Shell()
-            install_path = self.summon_path.replace("/","\/") ## Escape forwardslashes for sed
-            print(f"{self.style.info} Installpath: {install_path}")
-            ## sed -ir 's/.opt.demon/\/opt\/Summon/' /home/douglas/.config/xfce4/panel/launcher-18/16665848101.desktop
-            shell.run_cmd(["sed","-ir",f"'s/.opt.demon/{str(install_path)}/'",xfce4_panel_icon_file])
+            import re
+            with open(xfce4_panel_icon_file,"r") as icon_file:
+                lines = icon_file.readlines()
+            for index,line in enumerate(lines):
+                if re.search("^Exec",line):
+                    lines[index]=line.replace("/opt/demon",self.summon_path) ## Overwrite it.
+            print(lines)
 
         import requests ## for HTTP request
         if os.path.exists(self.repo_file): ## We need a version first
@@ -192,6 +195,7 @@ class Repo():
     def get_summon_icon_file(self):
         home_dir = os.path.expanduser("~")
         return str(subprocess.run(["egrep","-iElr","summon",f"{home_dir}/.config/xfce4/panel/"], stdout=subprocess.PIPE).stdout.decode().strip())
+
 
     ## Restore from the backup in case something tragic happens:
     def restore_repo(self):
