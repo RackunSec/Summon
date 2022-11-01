@@ -12,6 +12,8 @@ To install Demon Linux ontop of a fresh installation of Debian follow these step
  4. Finally, Summon a Demon: `python3 summon.py install demon -u (NON_ROOT_USERNAME)`
  5. Reboot
  
+[![Installation and Demo Video](https://img.youtube.com/vi/CspmyGp7LbA/default.jpg)](https://youtu.be/CspmyGp7LbA)
+
  ## Adding Tools
  To list tools:
  ```bash
