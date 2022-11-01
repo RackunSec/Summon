@@ -18,7 +18,9 @@ class Repo():
         self.repo_file = "/etc/demon/apps_repo/demon_apps.json"
         self.current_ver_uri="https://raw.githubusercontent.com/RackunSec/Summon/main/version.txt"
         self.style = Style()
-        self.cwd=os.getcwd() ## Were are we running from?
+        self.cwd=os.getcwd() ## Were are we running from
+        self.config_path="/etc/demon/summon.conf"
+        self.summon_path=self.get_install_path()
 
     ## Show all applications
     ##  calls display_app_info() for each application defined in the JSON file:
@@ -86,12 +88,7 @@ class Repo():
             apps=Apps()
             shell=Shell()
             self.style.prnt_install("Upgrade","Base")
-            config=ConfigParser() ## Lets read the Summon install path
-            config.read("/etc/demon/summon.config")
-            summon_path=config['SUMMON']['summon_path']
-
-
-            if apps.git_pull(summon_path):
+            if apps.git_pull(self.summon_path):
                 installed_apps = []
                 with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
                     repo_json = json.load(config)
@@ -101,7 +98,7 @@ class Repo():
                             if repo_json['apps_list'][category][repo_app]['installed']=="True":
                                 installed_apps.append(repo_app)
                 shell.run_cmd(["rm","-rf","/etc/demon/apps_repo/*"]) ## Remove the old repository
-                shell.run_cmd(["cp",summon_path+"/files/apps_repo/demon_apps.json","/etc/demon/apps_repo/"])
+                shell.run_cmd(["cp",self.summon_path+"/files/apps_repo/demon_apps.json","/etc/demon/apps_repo/"])
                 self.reset_new_repo(installed_apps) ## Write the new repo install status
                 with open(self.repo_file, "r") as config: ## get a list of currently installed apps:
                     repo_json = json.load(config)
@@ -139,8 +136,9 @@ class Repo():
         xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
         if xfce4_panel_icon_file!="":
             shell=Shell()
-            mycwd = str(self.cwd.replace("/","\/")) ## Escape forwardslashes for sed
-            shell.run_cmd(["sed","-ir",f"s/.opt.demon/{str(mycwd)}/",xfce4_panel_icon_file])
+            install_path = self.summon_path.replace("/","\/") ## Escape forwardslashes for sed
+            print(f"{self.style.info} Installpath: {install_path}")
+            shell.run_cmd(["sed","-ir",f"s/.opt.demon/{str(install_path)}/",xfce4_panel_icon_file])
 
         import requests ## for HTTP request
         if os.path.exists(self.repo_file): ## We need a version first
@@ -158,17 +156,26 @@ class Repo():
                 return False
             else:
                 print(f"{self.style.info} An update is ready for you!")
-                #shell.run_cmd(["notify-send","Summon","'Summon Updates Available'","--icon=software-update-urgent"])
                 shell.run_cmd(["notify-send","Summon",f"Summon Updates Available ({current_version})","--icon=/usr/share/demon/images/icons/summon.png"])
                 xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
                 if xfce4_panel_icon_file!="":
                     xfce4_panel_icon_file=xfce4_panel_icon_file
-                    #print(f"{style.info} Found XFCE4 Panel icon location: {xfce4_panel_icon_file}")
                     shell.run_cmd(["sed","-i","s/summon.png/summon-update.png/",xfce4_panel_icon_file]) ## change the icon
                 return True
         else:
             print(f"{self.style.fail} Could not read version file: {self.local_ver_file}")
         return
+
+    ## Get the install pathfr om the config file:
+    def get_install_path(self):
+        if os.path.exists(self.config_path):
+            config=ConfigParser() ## Lets read the Summon install path
+            config.read(self.config_path)
+            summon_path=config['SUMMON']['summon_path']
+            return str(summon_path)
+        else:
+            print(f"{self.style.fail} Could not read {self.config_path}")
+            exit()
 
     ## Ensure the health/existence of the config file:
     def check_config_file(self):
