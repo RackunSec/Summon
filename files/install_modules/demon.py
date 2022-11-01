@@ -12,6 +12,7 @@ from classes.Shell import Shell
 from classes.Python import Python
 from classes.Style import Style
 from classes.Files import Files
+from classes.Repo import Repo ## Repository stuff
 from configparser import ConfigParser ## for the configuration file
 import os
 import stat
@@ -25,6 +26,7 @@ class Application():
         self.python = Python()
         self.files = Files()
         self.style = Style()
+        self.repo=Repo()
         self.user = user ## We are forcing an installation 
         ## Common place to download stuff from:
         self.demon_repo = "https://demonlinux.com/download/packages/4.X/"
@@ -103,6 +105,11 @@ class Application():
             ## update Grub:
             self.shell.run_cmd(["grub-mkconfig","-o","/boot/grub/grub.cfg"])
             self.shell.run_cmd(["update-grub"])
+
+            xfce4_panel_icon_file = self.repo.get_summon_icon_file() ## Just get the file name
+            if xfce4_panel_icon_file!="":
+                shell=Shell()
+                shell.run_cmd(["sed","-ir",f"s/.opt.demon/{os.cwd()}/"])
 
         else:
             os.unlink("/root/root.tgz") ## delete it
