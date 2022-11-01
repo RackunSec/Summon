@@ -134,7 +134,7 @@ class Repo():
     ## Check for updates:
     def update_check(self):
         shell=Shell()
-        self.check_config_file() ## Check the config file
+        #self.check_config_file() ## Check the config file
         ## This gets called upon each login into EXCF4, so this makes the most sense for this code to be here:
         xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
         if xfce4_panel_icon_file!="":
