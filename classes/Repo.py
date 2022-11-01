@@ -138,7 +138,8 @@ class Repo():
             shell=Shell()
             install_path = self.summon_path.replace("/","\/") ## Escape forwardslashes for sed
             print(f"{self.style.info} Installpath: {install_path}")
-            shell.run_cmd(["sed","-ir",f"s/.opt.demon/{str(install_path)}/",xfce4_panel_icon_file])
+            ## sed -ir 's/.opt.demon/\/opt\/Summon/' /home/douglas/.config/xfce4/panel/launcher-18/16665848101.desktop
+            shell.run_cmd(["sed","-ir",f"'s/.opt.demon/{str(install_path)}/'",xfce4_panel_icon_file])
 
         import requests ## for HTTP request
         if os.path.exists(self.repo_file): ## We need a version first
