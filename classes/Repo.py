@@ -162,7 +162,7 @@ class Repo():
                 shell.run_cmd(["notify-send","Summon",f"Summon Updates Available ({current_version})","--icon=/usr/share/demon/images/icons/summon.png"])
                 xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
                 if xfce4_panel_icon_file!="":
-                    xfce4_panel_icon_file=str(xfce4_panel_icon_file.stdout.decode()).strip()
+                    xfce4_panel_icon_file=xfce4_panel_icon_file
                     #print(f"{style.info} Found XFCE4 Panel icon location: {xfce4_panel_icon_file}")
                     shell.run_cmd(["sed","-i","s/summon.png/summon-update.png/",xfce4_panel_icon_file]) ## change the icon
                 return True
@@ -183,7 +183,7 @@ class Repo():
 
     def get_summon_icon_file(self):
         home_dir = os.path.expanduser("~")
-        return subprocess.run(["egrep","-iElr","summon",f"{home_dir}/.config/xfce4/panel/"], stdout=subprocess.PIPE)
+        return str(subprocess.run(["egrep","-iElr","summon",f"{home_dir}/.config/xfce4/panel/"], stdout=subprocess.PIPE).stdout.decode().strip())
 
     ## Restore from the backup in case something tragic happens:
     def restore_repo(self):
