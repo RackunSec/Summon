@@ -80,6 +80,16 @@ class Apps:
         #print(f"{self.style.sub}{self.style.CMNT}Installation of apps completed.{self.style.RST}")
         return ## done
 
+    ## Check if an app repo branch is behind:
+    def git_behind(self,path):
+        if os.path.isdir(path):
+            os.chdir(path)
+            self.shell.run_cmd(["git","remote","update"]) ## update refs with remote
+            output = self.shell.run_cmd(["git","status","uno"])## Check if behind
+            if re.search("Your branch is behind",output):
+                print(f"{self.style.info}{self.style.CMNT} Remote updates available.{self.style.RST}\n")
+
+
     ## Installing apps via APT:
     def dpkg_install(self,deb_file):
         with Status(f"{self.style.CMNT}Dpkg Install: {self.style.RST}{self.style.PPUR}{deb_file}{self.style.RST}") as status:

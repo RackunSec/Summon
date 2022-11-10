@@ -39,6 +39,8 @@ def main(): ## This is mainly for handling input and sending tasks off to be don
         else:
             print(f"{style.RED} ✖{style.RST}")
             sys.exit(1337)
+        ## CHeck the repo for remote changes/sync:
+        check_repo()
         ## Check if /redteam exists:
         files=Files()
         files.build_redteam() ## if not there, build it.
@@ -118,6 +120,9 @@ def get_uid(function):
         print(f"{style.fail} {function} must be ran as root.")
         sys.exit(1337)
 
+def check_repo():
+    apps = Apps()
+    apps.git_behind(os.getcwd())
 
 ## Show Demon repo Version
 def demon_version():
