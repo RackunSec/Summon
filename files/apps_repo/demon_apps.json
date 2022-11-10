@@ -268,6 +268,18 @@
         "author": "cddmp",
         "comment": ""
       },
+      "credmaster":{
+        "name":"CredMaster",
+        "add": "False",
+        "demon_version": "4.1",
+        "installed": "False",
+        "category": "windows-domains",
+        "project_uri": "https://github.com/knavesec/CredMaster",
+        "about": "Launch a password spray / brute force attach via Amazon AWS passthrough proxies",
+        "install_path": "/redteam/windows-domains/CredMaster/",
+        "author": "Knavesec",
+        "comment": "May need some tweaking to work - specifically the import plugins code."
+      },
       "kerbrute": {
         "name": "Kerbrute",
         "add": "False",
@@ -892,6 +904,20 @@
         "about": "A unified tool to manage your AWS services",
         "install_path": "/redteam/cloud/aws",
         "author": "BishopFox",
+        "comment": ""
+      }
+    },
+    "evasion":{
+      "fireprox":{
+        "name": "Fireprox",
+        "add": "False",
+        "demon_version": "4.1",
+        "installed": "False",
+        "category": "evasion",
+        "project_uri": "https://github.com/ustayready/fireprox",
+        "about": "FireProx leverages the AWS API Gateway as a proxy to rotate IP addresses",
+        "install_path": "/redteam/evasion/fireprox",
+        "author": "Black Hills Information Security - UStayReady",
         "comment": ""
       }
     }

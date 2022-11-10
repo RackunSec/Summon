@@ -24,8 +24,11 @@ class Shell():
 
     ## Check internet connection:
     def check_internet(self):
-        response = requests.get("https://demonlinux.com")
-        if response.status_code==200:
-            return True
-        else:
+        try:
+            response = requests.get("https://demonlinux.com")
+            if response.status_code==200:
+                return True
+            else:
+                return False
+        except:
             return False

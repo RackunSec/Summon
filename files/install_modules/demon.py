@@ -55,7 +55,7 @@ class Application():
         self.files.download_file("https://demonlinux.com/download/packages/4.X/nanodesu.zip","/usr/share/themes/nanodesu.zip",True)
         if not os.path.isdir("/usr/share/themes/nanodesu"):
             os.chdir("/usr/share/themes/") ## Go here.
-            self.shell.run_cmd(["unzip","nanodesu.zip"])
+            self.shell.run_cmd(["unzip","-o","nanodesu.zip"])
 
         ## Install all Powerline fonts for root self.user and specified self.user:
         self.files.check_path_mkdir("/usr/share/fonts/truetype/powerline-all") ## make the directory.
@@ -99,7 +99,7 @@ class Application():
             ## download the grub.zip file into /boot/grub/themes/
             self.files.download_file(self.demon_repo+"grub.zip","/boot/grub/themes/grub.zip",True)
             os.chdir("/boot/grub/themes")
-            self.shell.run_cmd(["unzip","grub.zip"])
+            self.shell.run_cmd(["unzip","-o","grub.zip"])
             ## download grub.txt and overwrite /etc/default/grub:
             self.files.download_file(self.demon_repo+"grub.txt","/etc/default/grub",True)
             ## update Grub:

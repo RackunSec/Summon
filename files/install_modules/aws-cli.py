@@ -51,6 +51,7 @@ class Application():
         self.shell.run_cmd(["chmod","+x","install"])
         self.shell.run_cmd(["./install","--update"])
         os.unlink("/redteam/cloud/awscliv2.zip")
+        self.shell.run_cmd(["chmod","a+x","/usr/local/aws-cli/v2/current/dist/aws"]) ## Make it executable? 
 
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         ## Done. Do not edit below.
