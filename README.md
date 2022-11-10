@@ -15,7 +15,7 @@ To install Demon Linux ontop of a fresh installation of Debian follow these step
  
 [![Installation and Demo Video](https://img.youtube.com/vi/CspmyGp7LbA/default.jpg)](https://youtu.be/CspmyGp7LbA)
 
-For more information, please check the Wiki!
+For more information, please check the [Summon Wiki](https://github.com/RackunSec/Summon/wiki)!
 
 ~Douglas
 
