@@ -64,6 +64,7 @@ class Repo():
     ## Display application info to scree:
     def display_app_info(self,repo_json,category,app):
         print(f"  {self.style.PPUR}┌{self.style.PPUR}[{self.style.YLL}{repo_json['apps_list'][category][app]['name']}{self.style.PPUR}]{self.style.RST}: ",end="")
+        apps=Apps()
         if repo_json['apps_list'][category][app]['installed']=="True":
             print(f"({self.style.CMNT}{self.style.GREEN}Installed{self.style.RST})")
         else:
@@ -79,7 +80,8 @@ class Repo():
         print(f" {self.style.subpipe}{self.style.PPIN}Comment{self.style.PPUR}: {self.style.CMNT}{comment}{self.style.RST}")
         print(f" {self.style.subpipe}{self.style.PPIN}Install Path{self.style.PPUR}: {self.style.CMNT}{repo_json['apps_list'][category][app]['install_path']}{self.style.RST}")
         print(f" {self.style.subpipebot}{self.style.PPIN}How to Install{self.style.PPUR}: {self.style.CMNT}{self.style.PINK}python3 summon.py install {app}{self.style.RST}\n")
-
+        if repo_json['apps_list'][category][app]['remote_location']=="github" and repo_json['apps_list'][category][app]['local_repo_path']!="" and repo_json['apps_list'][category][app]['installed']=="True":
+            apps.git_behind(repo_json['apps_list'][category][app]['local_repo_path'],repo_json['apps_list'][category][app]['name']) ## check for update
         return
 
     ## Update the Summon repository in /etc/demon/:
@@ -132,6 +134,7 @@ class Repo():
     ## Check for updates:
     def update_check(self):
         shell=Shell()
+        apps=Apps()
         #self.check_config_file() ## Check the config file
         ## This gets called upon each login into EXCF4, so this makes the most sense for this code to be here:
         xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
@@ -149,6 +152,7 @@ class Repo():
         self.update_autostart_script(os.getlogin()) ## update this file too.
 
         import requests ## for HTTP request
+
         if os.path.exists(self.repo_file): ## We need a version first
             ## read the version fromthe repo file using json:
             with open(self.repo_file, "r") as config:
@@ -161,6 +165,10 @@ class Repo():
             print(f"{self.style.info} Current version: {current_version}")
             if local_version == current_version:
                 print(f"{self.style.info} Up to date.")
+                xfce4_panel_icon_file = self.get_summon_icon_file() ## Just get the file name
+                if xfce4_panel_icon_file!="":
+                    xfce4_panel_icon_file=xfce4_panel_icon_file
+                    shell.run_cmd(["sed","-i","s/summon-update.png/summon.png/",xfce4_panel_icon_file]) ## change the icon
                 return False
             else:
                 print(f"{self.style.info} An update is ready for you!")
@@ -218,5 +226,9 @@ class Repo():
     def restore_repo(self):
         shell=Shell()
         print(f"{self.style.info} Restoring repository from backup ... ")
-        shell.run_cmd(["cp","/etc/demon/apps_repo/demon_apps_backup.json","/etc/demon/apps_repo/demon_apps.json"])
-        self.update_check()
+        if os.path.exists("files/apps_repo/demon_apps.json"):
+            shell.run_cmd(["cp","files/apps_repo/demon_apps.json","/etc/demon/apps_repo/demon_apps.json"])
+            self.update_check()
+        else:
+            print(f"{self.style.fail} Could not open local repo file for reading: files/apps_repo/demon_apps.json !")
+            exit()

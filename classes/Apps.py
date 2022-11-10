@@ -81,14 +81,17 @@ class Apps:
         return ## done
 
     ## Check if an app repo branch is behind:
-    def git_behind(self,path):
+    def git_behind(self,path,app):
         if os.path.isdir(path):
             os.chdir(path)
-            self.shell.run_cmd(["git","remote","update"]) ## update refs with remote
-            output = self.shell.run_cmd(["git","status","uno"])## Check if behind
-            if re.search("Your branch is behind",output):
-                print(f"{self.style.info}{self.style.CMNT} Remote updates available.{self.style.RST}\n")
-
+            ## Check if .git folder here:
+            if os.path.isdir(".git"):
+                self.shell.run_cmd(["git","remote","update"]) ## update refs with remote
+                output = self.shell.run_cmd(["git","status","uno"])## Check if behind
+                if re.search("Your branch is behind",output):
+                    print(f"{self.style.info}{self.style.CMNT} Remote Git Repository updates available for {self.style.RED}{app}{self.style.RST}\n")
+            else:
+                print("[!] Apps.git_behind() requires a path to a local git Repository.")
 
     ## Installing apps via APT:
     def dpkg_install(self,deb_file):
@@ -255,6 +258,18 @@ class Apps:
             print(f"{self.style.fail} Could not read {self.demon_app_repo} file.")
             exit()
 
+    ## Marke the application as "Installed":
+    def update_repo_app_installed(self,app):
+        with open(self.demon_app_repo, "r") as config:
+            config_json = json.load(config)
+            for category in config_json['apps_list']:
+                for repo_app in config_json['apps_list'][category]:
+                    if repo_app == app:
+                        config_json['apps_list'][category][app]['installed']="True" # set to True
+                        config_json['apps_list'][category][app]['add']="False" # set to True
+        with open(self.demon_app_repo,"w") as update_json: ## The "indent=(n)" option here keeps the file linted/formatted/pretty nicely.
+            update_json.write(json.dumps(config_json,indent=2)) ## write the new values.
+
     ## Install a single application using ./files/install_modules files:
     def install_redteam_app(self,app,force,single):
         module_name = self.install_modules_classes+app
@@ -268,16 +283,21 @@ class Apps:
                             if repo_app == app:
                                 app_module_name = importlib.import_module(module_name)
                                 app_module = app_module_name.Application(force)
+                                ## Print that you are actually gonna do something:        
+                                self.style.prnt_install(config_json['apps_list'][category][repo_app]['name'],category)
                                 if not force:
                                     if app_module.check_install(): ## Already installed.
                                         print(f"{self.style.sub}{self.style.CMNT}Application {self.style.RST}{self.style.GREEN}{app}{self.style.CMNT} already installed.{self.style.RST}")
                                         print(f"{self.style.sub}{self.style.CMNT}Use {self.style.RED}--force{self.style.CMNT} to force installation.{self.style.RST}")
+                                        ## We need to check whether or this status is updated in the local repo:
+                                        if config_json['apps_list'][category][repo_app]['installed'] != "True":
+                                            self.update_repo_app_installed(app) ## update the repo file in /etc/demon
                                         return True
-                                    self.style.prnt_install(config_json['apps_list'][category][repo_app]['name'],category)
                                     if config_json['apps_list'][category][repo_app]['installed'] == "True" and not force:
                                         print(f"{self.style.sub}{self.style.CMNT}Application {self.style.RST}{self.style.GREEN}{app}{self.style.CMNT} already installed.{self.style.RST}")
                                         print(f"{self.style.sub}{self.style.CMNT}Use {self.style.RED}--force{self.style.CMNT} to force installation.{self.style.RST}")
                                         return True
+                                    ## OK, so now it will flow through to below if not installed:
         if os.path.exists(self.install_modules_dir+app+".py"):
             ## install it
             app_module_name = importlib.import_module(module_name)
@@ -287,23 +307,15 @@ class Apps:
                 if app_module.check_install(): ## Already installed.
                     print(f"{self.style.sub}{self.style.CMNT}Application {self.style.RST}{self.style.GREEN}{app}{self.style.CMNT} already installed.{self.style.RST}")
                     print(f"{self.style.sub}{self.style.CMNT}Use {self.style.RED}--force{self.style.CMNT} to force installation.{self.style.RST}")
+                    self.update_repo_app_installed(app) ## update the repo file in /etc/demon
                     return True
-
             app_module.install()
             if app_module.check_install():
                 print(f"{self.style.install_success}")
                 ## Installation was successful.
                 ## If this was a single application from the CLI, we need to update the Repo:
                 if single:
-                    with open(self.demon_app_repo, "r") as config:
-                        config_json = json.load(config)
-                        for category in config_json['apps_list']:
-                            for repo_app in config_json['apps_list'][category]:
-                                if repo_app == app:
-                                    config_json['apps_list'][category][app]['installed']="True" # set to True
-                                    config_json['apps_list'][category][app]['add']="False" # set to True
-                    with open(self.demon_app_repo,"w") as update_json: ## The "indent=(n)" option here keeps the file linted/formatted/pretty nicely.
-                        update_json.write(json.dumps(config_json,indent=2)) ## write the new values.
+                    self.update_repo_app_installed(app) ## update the repo file in /etc/demon
                 return True
             else:
                 print(f"{self.style.install_fail}")

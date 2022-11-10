@@ -122,7 +122,7 @@ def get_uid(function):
 
 def check_repo():
     apps = Apps()
-    apps.git_behind(os.getcwd())
+    apps.git_behind(os.getcwd(),"Summon")
 
 ## Show Demon repo Version
 def demon_version():

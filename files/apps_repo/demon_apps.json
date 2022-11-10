@@ -12,7 +12,9 @@
         "about": "Aircrack-ng is a complete suite of tools to assess WiFi network security",
         "install_path": "/usr/local/sbin/",
         "author": "Aircrack.org",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/wifi/aircrack-ng"
       },
       "reaver": {
         "name": "Reaver",
@@ -24,7 +26,9 @@
         "about": "Reaver implements a brute force attack against Wifi Protected Setup (WPS) registrar PINs",
         "install_path": "",
         "author": "t6x",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/wifi/reaver-wps-fork-t6x"
       },
       "bully": {
         "name": "Bully",
@@ -36,7 +40,9 @@
         "about": "Bully is a new implementation of the WPS brute force attack, written in C",
         "install_path": "",
         "author": "aanarchyy",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/wifi/bully"
       },
       "cowpatty": {
         "name": "CoWPAtty",
@@ -48,7 +54,9 @@
         "about": "Brute-force dictionary attack against WPA-PSK",
         "install_path": "",
         "author": "joswr1ght",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/wifi/cowpatty"
       },
       "macchanger": {
         "name": "MAC Changer",
@@ -60,7 +68,9 @@
         "about": "Utility that makes the manipulation of MAC addresses easier",
         "install_path": "",
         "author": "alobbs",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/wifi/macchanger"
       },
       "hcxtools": {
         "name": "HCX Tools",
@@ -72,7 +82,9 @@
         "about": "Small set of tools convert packets from captures for the use with latest hashcat or John the Ripper",
         "install_path": "",
         "author": "ZerBea",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/wifi/hcxtools"
       },
       "hcxdumptool": {
         "name": "HCXDumpTool",
@@ -84,7 +96,9 @@
         "about": "Capture packets from wlan devices and to discover potential weak points within own WiFi networks",
         "install_path": "",
         "author": "ZerBea",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/wifi/hcxdumptool"
       },
       "eaphammer": {
         "name": "EAPHammer",
@@ -96,7 +110,9 @@
         "about": "Toolkit for performing targeted evil twin attacks against WPA2-Enterprise networks",
         "install_path": "",
         "author": "s0lst1c3",
-        "comment": "This is @RackunSec's fork"
+        "comment": "This is @RackunSec's fork",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/wifi/eaphammer"
       },
       "wifite2": {
         "name": "WiFite2",
@@ -108,7 +124,9 @@
         "about": "Runs existing wireless-auditing tools for you",
         "install_path": "",
         "author": "derv82",
-        "comment": "Run WiFite2.py the repo with Python, not the binary in $PATH"
+        "comment": "Run WiFite2.py the repo with Python, not the binary in $PATH",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/wifi/wifite2"
       }
     },
     "windows-domains": {
@@ -122,7 +140,9 @@
         "about": "IPv6/IPv4 LLMNR/NBT-NS/mDNS Poisoner and NTLMv1/2 Relay",
         "install_path": "",
         "author": "lgandx",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/Responder"
       },
       "adidnsdump":{
         "name":"ADI DNS Dump",
@@ -134,7 +154,9 @@
         "about": "This tool enables enumeration and exporting of all DNS records in the zone for recon purposes of internal networks",
         "install_path": "/usr/local/bin/adidnsdump",
         "author": "dirkjanm",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/adidnsdump"
       },
       "smbmap": {
         "name": "SMBMap",
@@ -146,7 +168,9 @@
         "about": "SMBMap allows users to enumerate samba share drives across an entire domain",
         "install_path": "",
         "author": "ShawnDEvans",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/smbmap"
       },
       "mitm6": {
         "name": "MitM6",
@@ -158,7 +182,9 @@
         "about": "Exploits the default configuration of Windows to take over the default DNS server",
         "install_path": "",
         "author": "dirkjanm",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/mitm6"
       },
       "pre2k": {
         "name": "Pre2k",
@@ -170,7 +196,9 @@
         "about": "Tool to query for the existence of pre-windows 2000 computer objects",
         "install_path": "",
         "author": "garrettfoster13",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/pre2k"
       },
       "cheeseounce": {
         "name": "CheeseOunce",
@@ -182,7 +210,9 @@
         "about": "Simple POC make windows machines auth to another via MS-EVEN",
         "install_path": "",
         "author": "evilashz",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/CheeseOunce"
       },
       "lyncsmash": {
         "name": "LyncSmash",
@@ -194,7 +224,9 @@
         "about": "Tools to enumerate and attack self-hosted Skype for Business and Microsoft Lync installations",
         "install_path": "",
         "author": "nyxgeek",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/lyncsmash"
       },
       "bloodhound-python": {
         "name": "BloodHound-Python Ingestor",
@@ -206,7 +238,9 @@
         "about": "Python Implementation of the BloodHound Ingestor",
         "install_path": "",
         "author": "fox-it",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       },
       "bloodhound": {
         "name": "BloodHound (App)",
@@ -218,7 +252,9 @@
         "about": "BloodHound uses graph theory to reveal the hidden and often unintended relationships within an Active Directory",
         "install_path": "",
         "author": "Specter Ops Inc.",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       },
       "ldapdomaindump": {
         "name": "LDAPDomainDump",
@@ -230,7 +266,9 @@
         "about": "Active Directory information dumper via LDAP",
         "install_path": "",
         "author": "dirkjanm",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       },
       "certipy": {
         "name": "Certipy",
@@ -242,7 +280,9 @@
         "about": "Offensive tool for enumerating and abusing Active Directory Certificate Services",
         "install_path": "",
         "author": "ly4k",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/Certipy"
       },
       "coercer": {
         "name": "Coercer",
@@ -254,7 +294,9 @@
         "about": "Automatically coerce a Windows server to authenticate on an arbitrary machine through 9 methods.",
         "install_path": "",
         "author": "p0dalirius",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/Coercer"
       },
       "enum4linux-ng": {
         "name": "Enum4Linux-NG",
@@ -266,7 +308,9 @@
         "about": "Tool for enumerating information from Windows and Samba systems",
         "install_path": "",
         "author": "cddmp",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/enum4linux-ng"
       },
       "credmaster":{
         "name":"CredMaster",
@@ -278,7 +322,9 @@
         "about": "Launch a password spray / brute force attach via Amazon AWS passthrough proxies",
         "install_path": "/redteam/windows-domains/CredMaster/",
         "author": "Knavesec",
-        "comment": "May need some tweaking to work - specifically the import plugins code."
+        "comment": "May need some tweaking to work - specifically the import plugins code.",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/CredMaster"
       },
       "kerbrute": {
         "name": "Kerbrute",
@@ -290,7 +336,9 @@
         "about": "A tool to quickly bruteforce and enumerate valid Active Directory accounts through Kerberos Pre-Authentication",
         "install_path": "",
         "author": "ropnop",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       },
       "krbrelayx": {
         "name": "KrbRelayX",
@@ -302,7 +350,9 @@
         "about": "Toolkit for abusing Kerberos",
         "install_path": "",
         "author": "dirkjanm",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/krbrelayx"
       },
       "lsassy": {
         "name": "LSASSy",
@@ -314,7 +364,9 @@
         "about": "Python tool to remotely extract credentials on a set of hosts",
         "install_path": "",
         "author": "Hackndo",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/lsassy"
       },
       "rbcd-attack": {
         "name": "RBCD-Attack",
@@ -326,7 +378,9 @@
         "about": "Practical attack against Kerberos Resource-Based Constrained Delegation in a Windows Active Directory Domain",
         "install_path": "",
         "author": "tothi",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/rbcd-attack"
       },
       "crackmapexec": {
         "name": "CrackMapExec",
@@ -338,7 +392,9 @@
         "about": "Post-exploitation tool that helps automate assessing the security of large Active Directory networks",
         "install_path": "",
         "author": "Porchetta Industries",
-        "comment": ""
+        "comment": "Always run this with poetry.",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/CrackMapExec"
       },
       "impacket": {
         "name": "Impacket",
@@ -350,7 +406,9 @@
         "about": "Collection of Python classes for working with network protocols",
         "install_path": "",
         "author": "SecureAuthCorp",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/impacket"
       },
       "evil-winrm": {
         "name": "Evil-WinRM",
@@ -362,7 +420,9 @@
         "about": "ultimate WinRM shell for hacking/pentesting",
         "install_path": "",
         "author": "Hackplayers",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       },
       "ghostpack-binaries": {
         "name": "Ghostpack Pre-Compiled Windows Binaries",
@@ -374,7 +434,9 @@
         "about": "Compiled binaries for GhostPack authored by @harmj0y",
         "install_path": "",
         "author": "r3motecontrol",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/Ghostpack-CompiledBinaries"
       },
       "bofhound": {
         "name": "BOFHound",
@@ -386,7 +448,9 @@
         "about": "Offline BloodHound ingestor and LDAP result parser compatible with TrustedSec's ldapsearch BOF and the Python adaptation, pyldapsearch",
         "install_path": "",
         "author": "fortalice",
-        "comment": ""
+        "comment": "",
+        "remote_location":"pipx",
+        "local_repo_path":""
       },
       "pyldapsearch": {
         "name": "PyLDAPSearch",
@@ -398,7 +462,9 @@
         "about": "Python port of the ldapsearch BOF by TrustedSec",
         "install_path": "",
         "author": "fortalice",
-        "comment": ""
+        "comment": "",
+        "remote_location":"pipx",
+        "local_repo_path":""
       },
       "zerologon": {
         "name": "ZeroLogon",
@@ -410,7 +476,9 @@
         "about": "ZeroLogon exploitation script",
         "install_path": "",
         "author": "risksense",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/zerologon"
       },
       "ritm": {
         "name": "Roast in the Middle",
@@ -422,7 +490,9 @@
         "about": "Python implementation of the man-in-the-middle attack described by Charlie Clark",
         "install_path": "",
         "author": "Tw1sm - Matthew Creel",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/windows-domains/RITM"
       }
     },
     "exploit": {
@@ -436,7 +506,9 @@
         "about": "Archive of public exploits and corresponding vulnerable software",
         "install_path": "",
         "author": "Offensive Security",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/exploit/exploitdb"
       },
       "metasploit": {
         "name": "Metasploit Framework",
@@ -448,7 +520,9 @@
         "about": "The world\u2019s most used penetration testing framework",
         "install_path": "",
         "author": "Rapid7",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       }
     },
     "web": {
@@ -462,7 +536,9 @@
         "about": "Tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers",
         "install_path": "",
         "author": "Bernardo Damele Assumpcao Guimaraes, Miroslav Stampar",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/web/sqlmap"
       },
       "nikto": {
         "name": "Nikto2",
@@ -474,7 +550,9 @@
         "about": "Web server scanner which performs comprehensive tests against web servers for multiple items, including over 6700 potentially dangerous files/programs",
         "install_path": "",
         "author": "Chris Sullo",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/web/nikto"
       },
       "jwt-tool": {
         "name": "JWT Tool",
@@ -486,7 +564,9 @@
         "about": "Toolkit for validating, forging, scanning and tampering JWTs",
         "install_path": "",
         "author": "ticarpi",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/web/jwt_tool"
       },
       "wfuzz": {
         "name": "Wfuzz",
@@ -498,7 +578,9 @@
         "about": "Tool for web applications assessments",
         "install_path": "",
         "author": "xmendez",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/web/wfuzz"
       },
       "byp4xx": {
         "name": "Byp4xx",
@@ -510,7 +592,9 @@
         "about": "Python script for 40X responses bypassing",
         "install_path": "",
         "author": "lobuhi",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/web/byp4xx"
       },
       "sslyze": {
         "name": "SSLyze",
@@ -522,7 +606,9 @@
         "about": "A fast and powerful SSL/TLS scanning tool and Python library",
         "install_path": "",
         "author": "nabla-c0d3",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/web/sslyze"
       },
       "eyewitness": {
         "name": "EyeWitness",
@@ -534,7 +620,9 @@
         "about": "Take screenshots of websites provide some server header info, and identify default credentials if known",
         "install_path": "",
         "author": "Forty North Security",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/web/EyeWitness"
       },
       "batchql": {
         "name": "BatchQL",
@@ -546,7 +634,9 @@
         "about": "GraphQL security auditing script with a focus on performing batch GraphQL queries and mutations",
         "install_path": "",
         "author": "assetnote",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/web/GraphQL/batchql"
       },
       "graphqlmap": {
         "name": "GraphQLMap",
@@ -558,7 +648,9 @@
         "about": "Scripting engine to interact with a graphql endpoint for pentesting purposes",
         "install_path": "",
         "author": "swisskyrepo",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/web/GraphQLmap"
       },
       "graphql-enum-path": {
         "name": "GraphQL Enum Path",
@@ -570,7 +662,9 @@
         "about": "Tool that lists the different ways of reaching a given type in a GraphQL schema",
         "install_path": "",
         "author": "dee-see",
-        "comment": ""
+        "comment": "Compiled binary. No Repo.",
+        "remote_location":"github",
+        "local_repo_path":""
       },
       "drupwn": {
         "name": "DruPWN",
@@ -582,7 +676,9 @@
         "about": "Drupwn claims to provide an efficient way to gather drupal information",
         "install_path": "",
         "author": "immunIT",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/web/drupwn"
       },
       "zap": {
         "name": "OWASP Zed Attack Proxy",
@@ -594,7 +690,9 @@
         "about": "Web Application Proxy and Scanner",
         "install_path": "",
         "author": "OWASP",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       }
     },
     "misc": {
@@ -608,7 +706,9 @@
         "about": "Application launcher for Linux",
         "install_path": "",
         "author": "Free Software Foundation, Inc.",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       },
       "atomio": {
         "name": "Atom IDE",
@@ -620,7 +720,9 @@
         "about": "Open source IDE",
         "install_path": "",
         "author": "Github",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       },
       "vscode": {
         "name": "Visual Studio Code IDE",
@@ -632,7 +734,9 @@
         "about": "Vscode IDE - Code Editing, Redefined",
         "install_path": "",
         "author": "Microsoft",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       }
     },
     "databases": {
@@ -646,7 +750,9 @@
         "about": "Multi-platform database tool for developers, database administrators, analysts and all people who need to work with databases",
         "install_path": "",
         "author": "DBeaver",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       },
       "neo4j": {
         "name": "Neo4J",
@@ -658,7 +764,9 @@
         "about": "This is required for BloodHound",
         "install_path": "",
         "author": "Neo4j, Inc.",
-        "comment": ""
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       }
     },
     "passwords": {
@@ -672,7 +780,9 @@
         "about": "Password security auditing and password recovery tool available for many operating systems",
         "install_path": "",
         "author": "OpenWall",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/passwords/john"
       },
       "spraycharles": {
         "name": "SprayCharles",
@@ -684,7 +794,9 @@
         "about": "Low and slow password spraying tool, designed to spray on an interval over a long period of time",
         "install_path": "",
         "author": "Tw1sm - Matthew Creel",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/passwords/spraycharles"
       },
       "defaultcreds-cheat-sheet": {
         "name": "DefaultCreds Cheat Sheet",
@@ -696,7 +808,9 @@
         "about": "One place for all the default credentials to assist pentesters during an engagement",
         "install_path": "",
         "author": "ihebski",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/passwords/DefaultCreds-cheat-sheet"
       },
       "pypassgen": {
         "name": "PyPassGen",
@@ -708,7 +822,9 @@
         "about": "Python Password Generator",
         "install_path": "",
         "author": "pbssubhash",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/passwords/pypasgen"
       }
     },
     "wordlists": {
@@ -722,7 +838,9 @@
         "about": "Collection of multiple types of lists used during security assessments, collected in one place",
         "install_path": "",
         "author": "Daniel Miessler",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/wordlists/SecLists"
       },
       "rockyou": {
         "name": "Rockyou.txt",
@@ -734,7 +852,9 @@
         "about": "Large file of leaked passwords",
         "install_path": "",
         "author": "Hob0Rules",
-        "comment": ""
+        "comment": "From GitHub, but no local repo.",
+        "remote_location":"",
+        "local_repo_path":""
       }
     },
     "osint": {
@@ -748,7 +868,9 @@
         "about": "OSINT Automation for Hackers",
         "install_path": "",
         "author": "Black Lantern Security",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/osint/bbot"
       },
       "theharvester": {
         "name": "The Harvester",
@@ -760,7 +882,9 @@
         "about": "Tool designed to be used during the reconnaissance stage of a redteam assessment or penetration test",
         "install_path": "",
         "author": "laramies",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/osint/theHarvester"
       }
     },
     "rackunsec": {
@@ -774,7 +898,9 @@
         "about": "Python Scripts Used During Active Directory Engagements",
         "install_path": "",
         "author": "RackunSec",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/rackunsec/windows-domains/py-ad-tools"
       },
       "py-web-tools": {
         "name": "Python Web Tools",
@@ -786,7 +912,9 @@
         "about": "Python Scripts Used During Web Application Engagements",
         "install_path": "",
         "author": "RackunSec",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":""
       },
       "qdehashed": {
         "name": "Q-Dehashed",
@@ -798,7 +926,9 @@
         "about": "Unofficial Dehashed API Tool",
         "install_path": "",
         "author": "RackunSec",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":""
       },
       "cme-modules": {
         "name": "CrackMapExec Modules",
@@ -810,7 +940,9 @@
         "about": "RackunSec's CrackMapExec Modules",
         "install_path": "",
         "author": "RackunSec",
-        "comment": "Run this application with poetry"
+        "comment": "Run CME with poetry",
+        "remote_location":"github",
+        "local_repo_path":""
       },
       "rackun-wordlists": {
         "name": "RackunSec Wordlists",
@@ -822,7 +954,9 @@
         "about": "RackunSec's Wordlists",
         "install_path": "",
         "author": "RackunSec",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":""
       }
     },
     "apple": {
@@ -836,7 +970,9 @@
         "about": "Suite of tools to facilitate attacks against the Jamf macOS management platform",
         "install_path": "",
         "author": "With Secure Labs",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/apple/Jamf-Attack-Toolkit"
       }
     },
     "printers": {
@@ -850,7 +986,9 @@
         "about": "Tool for printer security testing developed in the scope of a Master's Thesis at Ruhr University Bochum",
         "install_path": "",
         "author": "RUB-NDS",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/printers/PRET"
       }
     },
     "enum": {
@@ -864,7 +1002,9 @@
         "about": "Internet-scale port scanner",
         "install_path": "",
         "author": "Robert David Graham",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/enumeration/masscan"
       }
     },
     "payloads": {
@@ -878,7 +1018,9 @@
         "about": "Payload creation tool used for circumventing EDR security controls to execute shellcode in a stealthy manner",
         "install_path": "",
         "author": "Optiv",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/payloads/Freeze"
       }
     },
     "cloud":{
@@ -892,7 +1034,9 @@
         "about": "Gain situational awareness in unfamiliar cloud environments",
         "install_path": "/redteam/cloud/CloudFox",
         "author": "BishopFox",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/cloud/CloudFox"
       },
       "aws-cli":{
         "name": "AWS CLI v2",
@@ -903,8 +1047,10 @@
         "project_uri": "https://aws.amazon.com/cli/",
         "about": "A unified tool to manage your AWS services",
         "install_path": "/redteam/cloud/aws",
-        "author": "BishopFox",
-        "comment": ""
+        "author": "Amazon Inc.",
+        "comment": "",
+        "remote_location":"",
+        "local_repo_path":""
       }
     },
     "evasion":{
@@ -918,7 +1064,9 @@
         "about": "FireProx leverages the AWS API Gateway as a proxy to rotate IP addresses",
         "install_path": "/redteam/evasion/fireprox",
         "author": "Black Hills Information Security - UStayReady",
-        "comment": ""
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/evasion/fireprox"
       }
     }
   }
