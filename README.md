@@ -15,32 +15,7 @@ To install Demon Linux ontop of a fresh installation of Debian follow these step
  
 [![Installation and Demo Video](https://img.youtube.com/vi/CspmyGp7LbA/default.jpg)](https://youtu.be/CspmyGp7LbA)
 
- ## Adding Tools
- To list tools:
- ```bash
- sudo python3 summon.py list-apps
- ```
- To list app info:
- ```bash
- sudo python3 summon.py app-info (APP_NAME)
- ```
- To install an application (single):
- ```bash
- sudo python3 summon.py install (APP_SHORT_NAME) # e.g.: eaphammer
- ```
- To install all applications:
- ```bash
- sudo python3 summon.py install all
- ```
- To select and choose apps to install you will have to update the repository in `/etc/demon/demon_apps.json` and set `add="True"` for each one. Then simply run:
- ```bash
- sudo python3 summon.py install add
- ```
- To use force (if an installation fails for any reason) use `--force` with any of the install commands listed above.
- 
- ## Updates and Upgrades
- All updates and upgrades will be handled by Summon. When you log into XFCE4, Summon will automatically check for updates and provide a notification if any are found. If updates are available, the Summon XCFE4 Panel icon will also change and show a green dot. To update, simply type:
- ```bash
- sudo python3 summon.py upgrade
- ```
+For more information, please check the Wiki!
+
+~Douglas
 
