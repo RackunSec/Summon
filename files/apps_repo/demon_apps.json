@@ -502,7 +502,7 @@
         "demon_version": "4.0",
         "installed": "False",
         "category": "exploit",
-        "project_uri": "https://github.com/offensive-security/exploitdb",
+        "project_uri": "https://gitlab.com/exploit-database/exploitdb",
         "about": "Archive of public exploits and corresponding vulnerable software",
         "install_path": "",
         "author": "Offensive Security",
