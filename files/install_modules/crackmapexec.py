@@ -53,7 +53,7 @@ class Application():
 
         if self.apps.git_clone("https://github.com/Porchetta-Industries/CrackMapExec.git","/redteam/windows-domains/","CrackMapExec"):
             ## One of the dependencies requires Rust that seems broken in pip/poetry:
-            self.files.download_file(self.demon_repo+"cme-extras.sh","/redteam/windows-domains/CrackMapExec/cme-extras.sh",True)
+            self.files.download_file(self.demon_repo+"cme-extra.sh","/redteam/windows-domains/CrackMapExec/cme-extras.sh",True)
             self.shell.run_cmd(["chmod","+x","/redteam/windows-domains/CrackMapExec/cme-extras.sh"]) # Make it executable
             self.shell.run_cmd(["/redteam/windows-domains/CrackMapExec/cme-extras.sh"]) # Run it
             self.python.pip_reqs("CrackMapExec","/redteam/windows-domains/CrackMapExec")
