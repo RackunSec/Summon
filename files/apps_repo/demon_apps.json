@@ -784,6 +784,20 @@
         "remote_location":"github",
         "local_repo_path":"/redteam/passwords/john"
       },
+      "credmaster": {
+        "name": "CredMaster",
+        "add": "False",
+        "demon_version": "4.1",
+        "installed": "False",
+        "category": "passwords",
+        "project_uri": "https://github.com/RackunSec/rackunsec-credmaster",
+        "about": "Password spraying and user enumeration of O365.",
+        "install_path": "",
+        "author": "Knavesec",
+        "comment": "This is @RackunSec's repository.",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/passwords/rackunsec-credmaster"
+      },
       "spraycharles": {
         "name": "SprayCharles",
         "add": "False",

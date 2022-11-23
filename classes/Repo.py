@@ -79,7 +79,7 @@ class Repo():
         print(f" {self.style.subpipe}{self.style.PPIN}Author{self.style.PPUR}: {self.style.CMNT}{repo_json['apps_list'][category][app]['author']}{self.style.RST}")
         print(f" {self.style.subpipe}{self.style.PPIN}Comment{self.style.PPUR}: {self.style.CMNT}{comment}{self.style.RST}")
         print(f" {self.style.subpipe}{self.style.PPIN}Install Path{self.style.PPUR}: {self.style.CMNT}{repo_json['apps_list'][category][app]['install_path']}{self.style.RST}")
-        print(f" {self.style.subpipebot}{self.style.PPIN}How to Install{self.style.PPUR}: {self.style.CMNT}{self.style.PINK}python3 summon.py install {app}{self.style.RST}\n")
+        print(f" {self.style.subpipebot}{self.style.PPIN}How to Install{self.style.PPUR}: {self.style.CMNT}{self.style.PINK}sudo python3 summon.py install {app}{self.style.RST}\n")
         if repo_json['apps_list'][category][app]['remote_location']=="github" and repo_json['apps_list'][category][app]['local_repo_path']!="" and repo_json['apps_list'][category][app]['installed']=="True":
             apps.git_behind(repo_json['apps_list'][category][app]['local_repo_path'],repo_json['apps_list'][category][app]['name']) ## check for update
         return
