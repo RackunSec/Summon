@@ -44,7 +44,7 @@ class Application():
         ## Installation instructions go here:
         ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-        if self.apps.git_clone("https://github.com/offensive-security/exploitdb.git","/redteam/exploit/","exploitdb"):
+        if self.apps.git_clone("https://gitlab.com/exploit-database/exploitdb.git","/redteam/exploit/","exploitdb"):
             os.chmod("/redteam/exploit/exploitdb/searchsploit",stat.S_IEXEC)
 
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
