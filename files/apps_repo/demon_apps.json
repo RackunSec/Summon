@@ -1098,19 +1098,19 @@
       }
     },
     "c2":{
-      "villian":{
-        "name": "Villian",
+      "villain":{
+        "name": "Villain",
         "add": "False",
         "demon_version": "4.1",
         "installed": "False",
         "category": "c2",
         "project_uri": "https://github.com/t3l3machus/Villain",
         "about": "Windows & Linux backdoor generator and multi-session handlers",
-        "install_path": "/redteam/c2/Villian",
+        "install_path": "/redteam/c2/Villain",
         "author": "t3l3machus",
         "comment": "",
         "remote_location":"github",
-        "local_repo_path":"/redteam/c2/Villian"
+        "local_repo_path":"/redteam/c2/Villain"
       }
     }
   }

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ## 2022 - Demon Linux 4.X - Douglas Berdeaux
-## Summon Installation module for: Villian
+## Summon Installation module for: Villain
 ## Module written by: @RackunSec
 ## -- Remember to add the application to demon_apps.json and enable it
 ##      by setting the value of "add" to "True"
@@ -32,8 +32,8 @@ class Application():
         ## Or sometimes, it's just the local GitHub repository:
 
         ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-        self.install_path_check ="/redteam/c2/Villian/Villian.py" ## This file will exist when the application is properly installed.
-        self.badpaths=["/redteam/c2/Villian"] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
+        self.install_path_check ="/redteam/c2/Villian/Villain.py" ## This file will exist when the application is properly installed.
+        self.badpaths=["/redteam/c2/Villain"] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         
     def install(self):
@@ -44,8 +44,8 @@ class Application():
         ## Installation instructions go here:
         ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-        if self.apps.git_clone("https://github.com/t3l3machus/Villain.git","/redteam/c2/","Villian"):
-            self.python.pip_reqs("Villian","/redteam/c2/Villian")
+        if self.apps.git_clone("https://github.com/t3l3machus/Villain.git","/redteam/c2/","Villain"):
+            self.python.pip_reqs("Villian","/redteam/c2/Villain")
 
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         ## Done. Do not edit below.
