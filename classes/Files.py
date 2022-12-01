@@ -52,7 +52,7 @@ class Files:
                 "/redteam/rackunsec/wordlists/","/redteam/rackunsec/osint/",
                 "/root/Pentest","/root/Pentest/web","/root/Pentest/scans",
                 "/root/Pentest/files","/root/Pentest/users","/redteam/payloads/",
-                "/redteam/apple","/redteam/cloud","/etc/demon","/redteam/evasion" ]
+                "/redteam/apple","/redteam/cloud","/etc/demon","/redteam/evasion","/redteam/c2" ]
             ## Make a bunch of directories:
             for dir in directories:
                 if not os.path.isdir(dir):

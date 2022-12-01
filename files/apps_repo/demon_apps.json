@@ -1081,6 +1081,36 @@
         "comment": "",
         "remote_location":"github",
         "local_repo_path":"/redteam/evasion/fireprox"
+      },
+      "darkarmour":{
+        "name": "DarkArmour",
+        "add": "False",
+        "demon_version": "4.1",
+        "installed": "False",
+        "category": "evasion",
+        "project_uri": "https://github.com/bats3c/darkarmour",
+        "about": "Store and execute an encrypted windows binary from inside memory, without a single bit touching disk",
+        "install_path": "/redteam/evasion/darkarmour",
+        "author": "Bats3c",
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/evasion/darkarmour"
+      }
+    },
+    "c2":{
+      "villian":{
+        "name": "Villian",
+        "add": "False",
+        "demon_version": "4.1",
+        "installed": "False",
+        "category": "c2",
+        "project_uri": "https://github.com/t3l3machus/Villain",
+        "about": "Windows & Linux backdoor generator and multi-session handlers",
+        "install_path": "/redteam/c2/Villian",
+        "author": "t3l3machus",
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/c2/Villian"
       }
     }
   }
