@@ -1095,6 +1095,20 @@
         "comment": "",
         "remote_location":"github",
         "local_repo_path":"/redteam/evasion/darkarmour"
+      },
+      "domain-fronting-lists":{
+        "name": "DomainFrontingLists",
+        "add": "False",
+        "demon_version": "4.1",
+        "installed": "False",
+        "category": "evasion",
+        "project_uri": "https://github.com/vysecurity/DomainFrontingLists",
+        "about": "Domain Fronting lists for a number of CDNs",
+        "install_path": "/redteam/evasion/DomainFrontingLists",
+        "author": "Vysecurity",
+        "comment": "",
+        "remote_location":"github",
+        "local_repo_path":"/redteam/evasion/DomainFrontingLists"
       }
     },
     "c2":{
