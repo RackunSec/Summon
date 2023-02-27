@@ -72,34 +72,6 @@
         "remote_location":"github",
         "local_repo_path":"/redteam/wifi/macchanger"
       },
-      "hcxtools": {
-        "name": "HCX Tools",
-        "add": "False",
-        "demon_version": "4.0",
-        "installed": "False",
-        "category": "wifi",
-        "project_uri": "https://github.com/ZerBea/hcxtools",
-        "about": "Small set of tools convert packets from captures for the use with latest hashcat or John the Ripper",
-        "install_path": "",
-        "author": "ZerBea",
-        "comment": "",
-        "remote_location":"github",
-        "local_repo_path":"/redteam/wifi/hcxtools"
-      },
-      "hcxdumptool": {
-        "name": "HCXDumpTool",
-        "add": "False",
-        "demon_version": "4.0",
-        "installed": "False",
-        "category": "wifi",
-        "project_uri": "https://github.com/ZerBea/hcxdumptool",
-        "about": "Capture packets from wlan devices and to discover potential weak points within own WiFi networks",
-        "install_path": "",
-        "author": "ZerBea",
-        "comment": "",
-        "remote_location":"github",
-        "local_repo_path":"/redteam/wifi/hcxdumptool"
-      },
       "eaphammer": {
         "name": "EAPHammer",
         "add": "False",
