@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 ## 2022 - Demon Linux 4.X - Douglas Berdeaux
-## Summon Installation module for: CredMaster (@RackunSec's repo)
+## Summon Installation module for: Vision2
 ## Module written by: @RackunSec
 ## -- Remember to add the application to demon_apps.json and enable it
 ##      by setting the value of "add" to "True"
 ## There are only 3 areas to update in this file.
 ## Edit everything between the ## vvv  ## ^^^ lines.
+# https://github.com/CoolerVoid/Vision2
+##
+
 
 ## Import all classes required for the module here:
 from classes.Apps import Apps
@@ -32,8 +35,8 @@ class Application():
         ## Or sometimes, it's just the local GitHub repository:
 
         ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-        self.install_path_check ="/redteam/passwords/rackunsec-credmaster/credmaster.py" ## This file will exist when the application is properly installed.
-        self.badpaths=["/redteam/passwords/rackunsec-credmaster"] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
+        self.install_path_check ="/redteam/enumeration/Vision2/vision2.py" ## This file will exist when the application is properly installed.
+        self.badpaths=["/redteam/enumeration/Vision2"] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         
     def install(self):
@@ -44,8 +47,8 @@ class Application():
         ## Installation instructions go here:
         ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
-        if self.apps.git_clone("https://github.com/RackunSec/rackunsec-credmaster.git","/redteam/passwords/","rackunsec-credmaster"):
-            self.python.pip_reqs("CredMaster","/redteam/passwords/rackunsec-credmaster")
+        if self.apps.git_clone("https://github.com/CoolerVoid/Vision2.git","/redteam/enumeration/","Vision2"):
+            self.python.pip_reqs("Vision2","/redteam/enumeration/Vision2")
 
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         ## Done. Do not edit below.
