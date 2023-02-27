@@ -29,7 +29,7 @@ class Application():
         ## Update this to point to the "installed" binary of this app
         ## This can often be in your $PATH (try `which (CMD` to locate it)
         ## Or sometimes, it's just the local GitHub repository:
-        self.install_path_check ="/usr/bin/lsassy" ## This file will exist when the application is properly installed.
+        self.install_path_check ="/usr/local/bin/lsassy" ## This file will exist when the application is properly installed.
         self.badpaths=["/redteam/windows-domains/lsassy"] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
         
     def install(self):
