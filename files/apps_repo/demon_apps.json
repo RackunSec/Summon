@@ -953,20 +953,6 @@
       }
     },
     "cloud":{
-      "cloudfox":{
-        "name": "CloudFox",
-        "add": "False",
-        "demon_version": "4.1",
-        "installed": "False",
-        "category": "cloud",
-        "project_uri": "https://github.com/BishopFox/cloudfox",
-        "about": "Gain situational awareness in unfamiliar cloud environments",
-        "install_path": "/redteam/cloud/CloudFox",
-        "author": "BishopFox",
-        "comment": "",
-        "remote_location":"github",
-        "local_repo_path":"/redteam/cloud/CloudFox"
-      },
       "aws-cli":{
         "name": "AWS CLI v2",
         "add": "False",
