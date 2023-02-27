@@ -32,8 +32,8 @@ class Application():
         ## Or sometimes, it's just the local GitHub repository:
 
         ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-        self.install_path_check ="" ## This file will exist when the application is properly installed.
-        self.badpaths=[] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
+        self.install_path_check ="/redteam/osint/msdorkdump/msdorkdump.py" ## This file will exist when the application is properly installed.
+        self.badpaths=["/redteam/osint/msdorkdump/"] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
         ##^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         
     def install(self):
