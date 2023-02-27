@@ -28,7 +28,7 @@ class Application():
         ## Update this to point to the "installed" binary of this app
         ## This can often be in your $PATH (try `which (CMD` to locate it)
         ## Or sometimes, it's just the local GitHub repository:
-        self.install_path_check ="/redteam/web/byp4xx/byp4xx.py" ## This file will exist when the application is properly installed.
+        self.install_path_check ="/redteam/web/byp4xx/byp4xx" ## This file will exist when the application is properly installed.
         self.badpaths=["/redteam/web/byp4xx/"] ## Destroy local repo (/redteam/(CATEGORY)/repo) and binary in $PATH.
         
     def install(self):
