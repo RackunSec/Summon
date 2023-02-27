@@ -32,13 +32,13 @@ class Apps:
             ]
         self.rackgit = "https://github.com/RackunSec/"
         self.demonrepo = "https://demonlinux.com/download/packages/4.X/"
-        self.install_modules_dir="files/install_modules/" 
+        self.current_dir=os.getcwd()
+        self.install_modules_dir=os.getcwd()+"/files/install_modules/"
         self.install_modules_classes="files.install_modules." 
         self.style=Style()
         self.python=Python()
         self.shell=Shell()
         self.files=Files()
-        self.current_dir=os.getcwd()
         self.demon_app_repo="/etc/demon/apps_repo/demon_apps.json"
 
     ## Ruby Gem Install stuff:
@@ -321,6 +321,6 @@ class Apps:
                 print(f"{self.style.install_fail}")
                 return False
         else:
-            print(f"{self.style.sub}{self.style.RED}No module named {app}.py found in {self.install_modules_dir}{self.style.RST}")
+            print(f"{self.style.sub}{self.style.RED}No module named {self.install_modules_dir+app+'.py'} found in {self.install_modules_dir}{self.style.RST}")
             return False
 
