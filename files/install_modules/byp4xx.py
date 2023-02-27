@@ -49,6 +49,8 @@ class Application():
         ## --------------------------------
 
         self.apps.git_clone("https://github.com/lobuhi/byp4xx.git","/redteam/web/","byp4xx")
+        os.chdir("/redteam/web/byp4xx")
+        self.shell.run_cmd(["go","build","byp4xx.go"]) ## That's a shame. I'll drop this soon once the Golang hits dep hell.
 
         ## --------------------------------
         ## Done. Do not edit below.

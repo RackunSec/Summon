@@ -47,7 +47,7 @@ class Application():
         if self.apps.git_clone("https://github.com/BishopFox/cloudfox.git","/redteam/cloud/","CloudFox"):
             os.chdir("/redteam/cloud/CloudFox/")
             if os.path.exists("/usr/local/go/bin/go"):
-                self.shell.run_cmd(["/usr/local/go/bin/go","build","."])
+                self.shell.run_cmd(["/usr/local/go/bin/go","build","/redteam/cloud/CloudFox/cloudfox"])
             else:
                 print(f"{self.style.fail} Go is not installed at \"/usr/local/go/bin/go\"")
                 return False
