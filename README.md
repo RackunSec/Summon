@@ -1,3 +1,6 @@
+# Notice of Deprecation
+This project is archived. To use Demon Linux >=5.0, please download the ISO from https://demonlinux.com/
+Thank you.
 # Summon - King of the Crossroads
 <img src="https://github.com/RackunSec/Summon/raw/main/files/images/icons/summon.png" width="300" />
 
